@@ -57,7 +57,6 @@ C:\Users\Ankit\source\repos\App3\App3\App3.Android\obj\Debug\R.cs.flag
 C:\Users\Ankit\source\repos\App3\App3\App3.Android\obj\Debug\uploadflags.txt
 C:\Users\Ankit\source\repos\App3\App3\App3.Android\obj\Debug\App3.Droid.Views.MainPage.xaml.g.cs
 C:\Users\Ankit\source\repos\App3\App3\App3.Android\obj\Debug\App3.Android.csprojResolveAssemblyReference.cache
-C:\Users\Ankit\source\repos\App3\App3\App3.Android\bin\Debug\App3.Android.dll
 bin\Debug\FormsViewGroup.dll.mdb
 bin\Debug\Xamarin.Forms.Core.dll.mdb
 bin\Debug\Xamarin.Forms.Platform.Android.dll.mdb
@@ -89,3 +88,6 @@ obj\Debug\linksrc\System.Runtime.Serialization.pdb
 obj\Debug\linksrc\System.ServiceModel.Internals.pdb
 obj\Debug\linksrc\Mono.Security.pdb
 obj\Debug\linksrc\System.ComponentModel.Composition.pdb
+C:\Repos\CSS\App3\App3.Android\obj\Debug\App3.Android.csprojResolveAssemblyReference.cache
+C:\Repos\CSS\App3\App3.Android\obj\Debug\App3.Android.dll
+C:\Repos\CSS\App3\App3.Android\obj\Debug\App3.Android.pdb

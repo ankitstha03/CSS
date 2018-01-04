@@ -59,14 +59,22 @@ namespace App3.Views
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            User user = new User(enUser.Text, enPass.Text);
-
-            if (user.CheckInformation(GetUsers()))
+            if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
-                Application.Current.MainPage = new NavigationPage(new Page1());
+
+                User user = new User(enUser.Text, enPass.Text);
+
+                if (user.CheckInformation(GetUsers()))
+                {
+                    Application.Current.MainPage = new NavigationPage(new Page1());
+                }
+                else
+                    DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
+
             }
             else
-                DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
+                DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
+
         }
 
         private async void Icon_Clicked(object sender, EventArgs e)

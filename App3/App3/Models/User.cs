@@ -22,18 +22,13 @@ namespace App3.Models
         {
             if (Userlist.Count!=0)
             {
-                if (!this.Username.Equals("") && !this.Password.Equals(""))
-                {
-
-
+                
                     foreach (User item in Userlist)
                     {
                         if (this.Username.Equals(item.Username) && this.Password.Equals(item.Password))
                             return true;
                     }
-                }
-                else
-                    return false;
+             
             }
 
             return false;

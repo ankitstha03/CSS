@@ -10,20 +10,20 @@ using Xamarin.Forms.Xaml;
 
 namespace App3
 {
-	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Page1 : ContentPage
-	{
-		public Page1 ()
-		{
-			InitializeComponent ();
-		}
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Page1 : ContentPage
+    {
+        public Page1()
+        {
+            InitializeComponent();
+        }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
 
-                Application.Current.MainPage = new NavigationPage(new MainPage());
+            Application.Current.MainPage = new NavigationPage(new MainPage());
 
-     
+
         }
     }
 }

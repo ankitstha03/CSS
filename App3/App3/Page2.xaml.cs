@@ -46,14 +46,33 @@ namespace App3
 
         private void Button_Clicked(object sender, EventArgs e)
         {
-            User user = new User(userent.Text, passent.Text);
-            AddUsers(user);
-            if (user.CheckInformation(Constants._users))
+            if (userent.Text != null && passent.Text != null && userent.Text != "" && passent.Text != "")
             {
-                Application.Current.MainPage = new NavigationPage(new Page1());
+                if (passent.Text == passent2.Text)
+                {
+                    User user = new User(userent.Text, passent.Text);
+
+                    if (!user.CheckInformation(Constants._users))
+                    {
+                        AddUsers(user);
+
+                        if (user.CheckInformation(Constants._users))
+                        {
+                            Application.Current.MainPage = new NavigationPage(new Page1());
+                        }
+                        else
+                            DisplayAlert("Register Failed", "The Username Or Password is Incorrect", "Ok");
+                    }
+                    else
+                        DisplayAlert("Register Failed", "The Username already exists", "Ok");
+
+                }
+                else
+                    DisplayAlert("Register Failed", "The Password and Confirm Password do not match", "Ok");
+
             }
             else
-                DisplayAlert("Register Failed", "The Username Or Password is Incorrect", "Ok");
+                DisplayAlert("Register Failed", "The Username Or Password is Empty", "Ok");
         }
     }
 }

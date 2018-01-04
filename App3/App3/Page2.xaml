@@ -26,12 +26,13 @@
 
     <ContentPage.Content>
         <ScrollView>
+            <StackLayout>
 
-          <Grid BackgroundColor="White">
+            <Grid BackgroundColor="White">
             <Grid.RowDefinitions>
                 <RowDefinition Height="40"/>
                 <RowDefinition Height="*"/>
-                <RowDefinition Height="50"/>
+
             </Grid.RowDefinitions>
             <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Margin="0,0,0,0">
                 <Picker Title="Select Language" Opacity="0.6" HeightRequest="10" HorizontalOptions="EndAndExpand" VerticalOptions="Fill" >
@@ -58,9 +59,7 @@
                     <RowDefinition Height="50"/>
 
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="40"/>
-                    <RowDefinition Height="Auto"/>
+
                     <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
                    
@@ -143,16 +142,17 @@
 
                     </Grid.ColumnDefinitions>
                     <Image Grid.Column="0" Source="profile.png" HorizontalOptions="Start" HeightRequest="30" />
-                    <Entry  Grid.Column="1" IsPassword="True" Placeholder="Confirm you password" PlaceholderColor="#bababa" FontSize="16"/>
+                            <Entry  Grid.Column="1" x:Name="passent2" IsPassword="True" Placeholder="Confirm you password" PlaceholderColor="#bababa" FontSize="16"/>
 
                 </Grid>
 
                     
             </Grid>
-            <Button Text="Register" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="End" Grid.Row="8" Clicked="Button_Clicked"/>
           </Grid>
+            <Button Text="Register" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="End"  Clicked="Button_Clicked"/>
+            </StackLayout>
 
-      </ScrollView>
+        </ScrollView>
 
 
     </ContentPage.Content>

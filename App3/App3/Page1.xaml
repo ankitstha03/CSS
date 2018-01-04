@@ -3,11 +3,26 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Page1"
              Title="Second Page">
-    <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
-    </ContentPage.Content>
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>
+                0,20,0,0
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+                0,0,0,0
+            </OnPlatform.Android>
+            <OnPlatform.WinPhone>
+                0,0,0,0
+            </OnPlatform.WinPhone>
+        </OnPlatform>
+    </ContentPage.Padding>
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary"/>
+        <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
+        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
+    </ContentPage.ToolbarItems>
+    <Button Text="Logout" x:Name="btnLogout" TextColor="White" HeightRequest="50" VerticalOptions="Start" Clicked="Button_Clicked"/>
+
+
 </ContentPage>

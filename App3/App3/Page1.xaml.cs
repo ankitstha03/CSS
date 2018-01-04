@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
+using App3.Views;
 using Xamarin.Forms.Xaml;
 
 namespace App3
@@ -16,5 +17,13 @@ namespace App3
 		{
 			InitializeComponent ();
 		}
-	}
+
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+
+                Application.Current.MainPage = new NavigationPage(new MainPage());
+
+     
+        }
+    }
 }

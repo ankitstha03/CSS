@@ -15,5 +15,12 @@ namespace App3.Models
 
 
         public static int LoginIconHeight = 120;
+
+        public static List<User> _users = new List<User>()
+           {
+               new User ("User1", "pass1"),
+               new User ("User2", "pass2")
+
+           };
     }
 }

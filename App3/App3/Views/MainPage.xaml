@@ -25,7 +25,7 @@
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
     </ContentPage.ToolbarItems>
-    
+
     <ContentPage.Content>
         <Grid>
             <Grid.RowDefinitions>
@@ -44,7 +44,7 @@
 
 
             </StackLayout>
-            
+
             <Grid Grid.Row="1"  Margin="20,0,20,0">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
@@ -84,7 +84,7 @@
                 </StackLayout>
             </Grid>
             <StackLayout  Grid.Row="2" >
-               
+
                 <Label HeightRequest="1" BackgroundColor="#e3e3e3"/>
                 <Label Text="Don't have an account? Sign Up"  VerticalTextAlignment="Center" HorizontalTextAlignment="Center" VerticalOptions="FillAndExpand"/>
                 <StackLayout.GestureRecognizers>
@@ -93,5 +93,5 @@
             </StackLayout>
         </Grid>
     </ContentPage.Content>
-    
+
 </ContentPage>

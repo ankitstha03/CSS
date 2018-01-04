@@ -11,38 +11,37 @@ namespace App3.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
-	{
-		public MainPage()
-		{
-			InitializeComponent();
+    {
+        public MainPage()
+        {
+            InitializeComponent();
             Init();
-		}
+        }
 
         private void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
             enUser.PlaceholderColor = Constants.PlaceholderColor;
             enPass.TextColor = Constants.PlaceholderColor;
-            btnLogin.TextColor= Constants.BackgroundColor;
+            btnLogin.TextColor = Constants.BackgroundColor;
             btnLogin.BackgroundColor = Constants.ButtonColor;
-
-
+            
+            
             enUser.Completed += (s, e) => enPass.Focus();
             enPass.Completed += (s, e) => Button_Clicked(s, e);
         }
 
+
+
+
         List<User> GetUsers()
         {
-            var _users = new List<User>
-           {
-               new User ("User1", "pass1"),
-               new User ("User2", "pass2")
-
-           };
-            return _users;
+            
+            return Constants._users;
 
         }
 
+      
         private void TapGestureRecognizer_Clicked(object sender, EventArgs e)
         {
             DisplayAlert("Title", "Confirm Submission", "OK", "CANCEL");
@@ -54,17 +53,17 @@ namespace App3.Views
         }
         private void Tap2GestureRecognizer_Clicked(object sender, EventArgs e)
         {
-            DisplayAlert("SignUp", "Confirm Submission", "OK", "CANCEL");
+            Navigation.PushAsync(new Page2());
         }
 
-        
+
         private void Button_Clicked(object sender, EventArgs e)
         {
             User user = new User(enUser.Text, enPass.Text);
 
             if (user.CheckInformation(GetUsers()))
             {
-                Application.Current.MainPage = new NavigationPage(new Invoice());
+                Application.Current.MainPage = new NavigationPage(new Page1());
             }
             else
                 DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
@@ -72,9 +71,9 @@ namespace App3.Views
 
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Invoice());
+            await Navigation.PushAsync(new Page1());
         }
     }
 
-    
+
 }

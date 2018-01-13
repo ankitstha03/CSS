@@ -33,7 +33,6 @@ namespace App3.Views
 
 
 
-
         List<User> GetUsers()
         {
             
@@ -62,9 +61,9 @@ namespace App3.Views
             if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
 
-                User user = new User(enUser.Text, enPass.Text);
+                Constants.user = new User(enUser.Text, enPass.Text);
 
-                if (user.CheckInformation(GetUsers()))
+                if (Constants.user.CheckInformation(GetUsers()))
                 {
                     Application.Current.MainPage = new NavigationPage(new Page1());
                 }
@@ -77,9 +76,10 @@ namespace App3.Views
 
         }
 
+
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new TicketPage());
         }
     }
 

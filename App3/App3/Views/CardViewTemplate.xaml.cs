@@ -1,22 +1,20 @@
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 using Xamarin.Forms;
-using App3.Views;
 using Xamarin.Forms.Xaml;
 
-namespace App3
+namespace App3.Views
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Page1 : ContentPage
+    public partial class CardViewTemplate : ContentView
     {
-        public Page1()
+        public CardViewTemplate()
         {
             InitializeComponent();
         }
-
     }
 }

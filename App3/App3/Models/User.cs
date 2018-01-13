@@ -34,5 +34,22 @@ namespace App3.Models
             return false;
 
         }
+
+        public bool CheckUsername(List<User> Userlist)
+        {
+            if (Userlist.Count != 0)
+            {
+
+                foreach (User item in Userlist)
+                {
+                    if (this.Username.Equals(item.Username))
+                        return true;
+                }
+
+            }
+
+            return false;
+
+        }
     }
 }

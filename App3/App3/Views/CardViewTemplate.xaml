@@ -41,7 +41,7 @@
                HorizontalTextAlignment="Start"
                VerticalTextAlignment="Center"
                FontSize="12"
-               Text="{Binding HeadTitle , Mode = TwoWay}" TextColor="Gray" >
+               Text="{Binding Title , Mode = TwoWay}" TextColor="Gray" >
                     </Label>
 
 
@@ -56,7 +56,7 @@
                HorizontalTextAlignment="Start"
                VerticalTextAlignment="Start"
                FontSize="12"
-               Text="{Binding HeadLines, Mode = TwoWay}" TextColor="Black">
+               Text="{Binding Status, Mode = TwoWay}" TextColor="Black">
 
                         </Label>
                         <Image Source="{Binding  ProfileImage}"  Grid.Row="2"  WidthRequest="40" HeightRequest="40" HorizontalOptions="End" />
@@ -75,7 +75,7 @@
                  />
                     <Label Grid.Row="0"
                  Grid.Column="0"
-                 Text="{Binding HeadLinesDesc}" HorizontalOptions="Start" VerticalOptions="Start"/>
+                 Text="{Binding Status}" HorizontalOptions="Start" VerticalOptions="Start"/>
                 </Grid>
 
             </Grid>

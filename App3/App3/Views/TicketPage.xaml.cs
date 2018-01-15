@@ -13,6 +13,7 @@ namespace App3.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class TicketPage : ContentPage
 	{
+        Ticket ticketer=new Ticket();
         int count=0;
         Entry msgent = new Entry { Placeholder = "Write a message",  HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
         StackLayout layout = new StackLayout
@@ -28,17 +29,18 @@ namespace App3.Views
             VerticalOptions = LayoutOptions.StartAndExpand
 
         };
-        public TicketPage ()
+        public TicketPage (int id)
 		{
 			InitializeComponent ();
-            Title = Constants.ticketer.Title;
+            Getticket(id);
+            Title = ticketer.Title;
             Button senbutton = new Button { Text = "Send", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
             senbutton.Clicked += new EventHandler(Button_Clicked);
             
             
             layout.Children.Add(new Label { HeightRequest=0, BackgroundColor = Color.Transparent, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand});
 
-            foreach (Message msg in Constants.ticketer.Msg)
+            foreach (Message msg in ticketer.Msg)
             {
                 count += 1;
                 if (msg.Sender)
@@ -94,7 +96,7 @@ namespace App3.Views
                 Padding = new Thickness(0, 0, 0, 0),
                 Orientation = StackOrientation.Vertical
             };
-            layout2.Children.Add(new Label { Text = Constants.ticketer.Status, HorizontalTextAlignment=TextAlignment.Center, VerticalTextAlignment=TextAlignment.Center, HeightRequest = 40, BackgroundColor = Color.FromHex("#121212"), FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
+            layout2.Children.Add(new Label { Text = ticketer.Status, HorizontalTextAlignment=TextAlignment.Center, VerticalTextAlignment=TextAlignment.Center, HeightRequest = 40, BackgroundColor = Color.FromHex("#121212"), FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
             layout2.Children.Add(view);
             layout2.Children.Add(layout1);
             
@@ -105,24 +107,35 @@ namespace App3.Views
 
         }
 
-
+        private void Getticket(int id)
+        {
+            foreach(Ticket ticket in Constants._ticket)
+            {
+                if (ticket.Id == id)
+                    ticketer = ticket;
+            }
+        }
         private void Button_Clicked(object sender, EventArgs e)
         {
-            Constants.ticketer.Addmessage(Constants.ticketer, new Message ( msgent.Text, true ));
-            Frame temp = new Frame
+            if(msgent.Text!="" && msgent.Text != null)
             {
-                CornerRadius = 12,
-                OutlineColor = Color.Transparent,
-                Padding = new Thickness(15, 5, 15, 5),
-                Margin = new Thickness(0, 0, 50, 0),
-                HorizontalOptions = LayoutOptions.Start,
-                VerticalOptions = LayoutOptions.Fill,
-                BackgroundColor = Color.FromHex("#6677ee")
-            };
-            temp.Content = new Label { Text = msgent.Text, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
-            layout.Children.Add(temp);
-            view.ScrollToAsync(temp, ScrollToPosition.End, true);
-            msgent.Text = string.Empty;
+                ticketer.Addmessage(ticketer, new Message(msgent.Text, true));
+                Frame temp = new Frame
+                {
+                    CornerRadius = 12,
+                    OutlineColor = Color.Transparent,
+                    Padding = new Thickness(15, 5, 15, 5),
+                    Margin = new Thickness(0, 0, 50, 0),
+                    HorizontalOptions = LayoutOptions.Start,
+                    VerticalOptions = LayoutOptions.Fill,
+                    BackgroundColor = Color.FromHex("#6677ee")
+                };
+                temp.Content = new Label { Text = msgent.Text, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
+                layout.Children.Add(temp);
+                view.ScrollToAsync(temp, ScrollToPosition.End, true);
+                msgent.Text = string.Empty;
+            }
+            
 
         }
     }

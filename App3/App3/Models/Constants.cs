@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Text;
 using Xamarin.Forms;
+using App3.ViewModel;
 
 namespace App3.Models
 {
@@ -52,7 +53,28 @@ namespace App3.Models
 
            };
 
-        public static Ticket ticketer = new Ticket(new User("User1", "pass1"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer1 = new Ticket(1, new User("User1", "pass1"), "asdasd", "Pending", _msg );
+        public static Ticket ticketer2 = new Ticket(2, new User("User1", "pass1"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer3 = new Ticket(3, new User("User1", "pass1"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer4 = new Ticket(4, new User("User2", "pass2"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer5 = new Ticket(5, new User("User1", "pass1"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer6 = new Ticket(6, new User("User1", "pass1"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer7 = new Ticket(7, new User("User2", "pass2"), "asdasd", "Pending", _msg);
+
+        public static List<Ticket> _ticket = new List<Ticket>()
+        {
+            ticketer1,
+            ticketer2,
+            ticketer3,
+            ticketer4,
+            ticketer5,
+            ticketer6,
+            ticketer7,
+
+
+        };
+
+
 
         public static int LoginIconHeight = 120;
 

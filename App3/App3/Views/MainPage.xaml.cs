@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using App3.Models;
+using App3.ViewModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -79,7 +81,7 @@ namespace App3.Views
 
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TicketPage());
+            await Navigation.PushAsync(new TicketPage(1));
         }
     }
 

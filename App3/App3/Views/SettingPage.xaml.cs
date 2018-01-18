@@ -47,8 +47,13 @@ namespace App3.Views
                 tapGestureRecognizer.Tapped += (s, e) => {
                     var a = s as BoxView;
                     var app = Application.Current as App;
-                    app.DefColor = a.Color;
-                    ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = app.DefColor;
+                    int red = (int)(a.Color.R * 255);
+                    int green = (int)(a.Color.G * 255);
+                    int blue = (int)(a.Color.B * 255);
+                    string hex = String.Format("#{0:X2}{1:X2}{2:X2}", red, green, blue);
+                    app.DefColor = hex;
+                   ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
+                    Application.Current.SavePropertiesAsync();
                     Navigation.PopAsync();
 
                 };

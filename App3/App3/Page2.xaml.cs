@@ -84,7 +84,7 @@ namespace App3
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            btnreg.BackgroundColor = app.DefColor;
+            btnreg.BackgroundColor = Color.FromHex(app.DefColor);
         }
         }
 

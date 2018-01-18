@@ -48,7 +48,7 @@ namespace App3
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = app.DefColor;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
         }
         }
 }

@@ -35,15 +35,15 @@ namespace App3
 			// Handle when your app resumes
 		}
 
-        public Color DefColor
+        public string DefColor
         {
             get
             {
                 if (Properties.ContainsKey(color))
-                    return (Color)Properties[color];
+                    return Properties[color].ToString();
 
-
-                return Color.FromHex("#6677dd");
+                else
+                    return "#6677dd";
             }
 
             set

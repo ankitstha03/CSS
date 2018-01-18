@@ -60,10 +60,10 @@ namespace App3.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = app.DefColor;
-            enUser.PlaceholderColor = app.DefColor;
-            enPass.TextColor = app.DefColor;
-            btnLogin.BackgroundColor = app.DefColor;
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
+            enUser.PlaceholderColor = Color.FromHex(app.DefColor);
+            enPass.TextColor = Color.FromHex(app.DefColor);
+            btnLogin.BackgroundColor = Color.FromHex(app.DefColor);
 
         }
 

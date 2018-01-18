@@ -62,7 +62,7 @@ namespace App3.Views
                     Margin = new Thickness(0, 0, 50, 0),
                     HorizontalOptions = LayoutOptions.Start,
                     VerticalOptions = LayoutOptions.Fill,
-                                            BackgroundColor = app.DefColor
+                    BackgroundColor = Color.FromHex(app.DefColor)
 
                 };
                 temp.Content = new Label { Text = msgent.Text, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
@@ -98,7 +98,7 @@ namespace App3.Views
                         Margin = new Thickness(0, 0, 50, 0),
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Fill,
-                        BackgroundColor = app.DefColor
+                        BackgroundColor = Color.FromHex(app.DefColor)
                     };
                     temp.Content = new Label { Text = msg.Textmess, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
                     layout.Children.Add(temp);

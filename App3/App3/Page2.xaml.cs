@@ -52,7 +52,7 @@ namespace App3
                 {
                     User user = new User(userent.Text, passent.Text);
 
-                    if (!user.CheckInformation(Constants._users))
+                    if (!user.CheckUsername(Constants._users))
                     {
                         AddUsers(user);
 

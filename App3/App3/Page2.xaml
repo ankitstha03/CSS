@@ -19,7 +19,7 @@
 
     <ContentPage.ToolbarItems>
 
-        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary"/>
+        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
     </ContentPage.ToolbarItems>
@@ -149,7 +149,7 @@
                     
             </Grid>
           </Grid>
-            <Button Text="Register" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="End"  Clicked="Button_Clicked"/>
+            <Button Text="Register" x:Name="btnreg" TextColor="White" HeightRequest="50" VerticalOptions="End"  Clicked="Button_Clicked"/>
             </StackLayout>
 
         </ScrollView>

@@ -21,7 +21,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Icon" Icon="profile.png" Clicked="Icon_Clicked"/>
-        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary"/>
+        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
     </ContentPage.ToolbarItems>

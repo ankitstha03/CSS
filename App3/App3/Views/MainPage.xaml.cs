@@ -14,6 +14,8 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        App app = Application.Current as App;
+
         public MainPage()
         {
             InitializeComponent();
@@ -23,10 +25,8 @@ namespace App3.Views
         private void Init()
         {
             BackgroundColor = Constants.BackgroundColor;
-            enUser.PlaceholderColor = Constants.PlaceholderColor;
-            enPass.TextColor = Constants.PlaceholderColor;
+           
             btnLogin.TextColor = Constants.BackgroundColor;
-            btnLogin.BackgroundColor = Constants.ButtonColor;
             
             
             enUser.Completed += (s, e) => enPass.Focus();
@@ -57,6 +57,15 @@ namespace App3.Views
             Navigation.PushAsync(new Page2());
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = app.DefColor;
+            enUser.PlaceholderColor = app.DefColor;
+            enPass.TextColor = app.DefColor;
+            btnLogin.BackgroundColor = app.DefColor;
+
+        }
 
         private void Button_Clicked(object sender, EventArgs e)
         {
@@ -82,6 +91,11 @@ namespace App3.Views
         private async void Icon_Clicked(object sender, EventArgs e)
         {
             await Navigation.PushAsync(new TicketPage(1));
+        }
+
+        private void Onactivated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage());
         }
     }
 

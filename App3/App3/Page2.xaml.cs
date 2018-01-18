@@ -17,6 +17,8 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Page2 : ContentPage
 	{
+        App app = Application.Current as App;
+
         private MediaFile _mediaFile;
 
 		public Page2 ()
@@ -74,5 +76,18 @@ namespace App3
             else
                 DisplayAlert("Register Failed", "The Username Or Password is Empty", "Ok");
         }
-    }
+        private void Onactivated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage());
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            btnreg.BackgroundColor = app.DefColor;
+        }
+        }
+
+  
+
 }

@@ -69,12 +69,24 @@ namespace App3.Models
             ticketer4,
             ticketer5,
             ticketer6,
-            ticketer7,
+            ticketer7
+        };
 
+        public static List<String> _colors = new List<String>()
+        {
+            "#f44336",
+            "#e91e63",
+            "#9c27b0",
+            "#2196f3",
+            "#009688",
+            "#4caf50",
+            "#f57f17",
+            "#f57c00",
+            "#757575",
 
         };
 
-
+        public static Page CurrentPage;
 
         public static int LoginIconHeight = 120;
 
@@ -84,5 +96,7 @@ namespace App3.Models
                new User ("User2", "pass2")
 
            };
+
+       
     }
 }

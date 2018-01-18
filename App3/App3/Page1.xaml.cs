@@ -14,6 +14,8 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
+        App app = Application.Current as App;
+
         public Page1()
         {
             InitializeComponent();
@@ -31,5 +33,22 @@ namespace App3
             await Navigation.PushAsync(new TicketPage(dataCard.Id));
             listView.SelectedItem = null;
         }
-    }
+
+        private void Onactivated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage());
+        }
+
+        private void Onlogout(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MainPage());
+
+        }
+
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = app.DefColor;
+        }
+        }
 }

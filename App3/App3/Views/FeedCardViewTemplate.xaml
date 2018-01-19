@@ -1,0 +1,50 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Views.FeedCardViewTemplate" 
+             xmlns:controls="clr-namespace:ImageCircle.Forms.Plugin.Abstractions;assembly=ImageCircle.Forms.Plugin.Abstractions"
+             xmlns:local="clr-namespace:App3">
+
+    <Frame IsClippedToBounds="True"
+         HasShadow="True"
+         BackgroundColor="White" >
+        <Frame.OutlineColor>
+            <OnPlatform x:TypeArguments="Color"
+                  Android="Gray"
+                  iOS="Gray"/>
+        </Frame.OutlineColor>
+        <Frame.Margin>
+            <OnPlatform x:TypeArguments="Thickness"
+                  Android="7" iOS="7"/>
+        </Frame.Margin>
+        <Frame.Padding>
+            <OnPlatform x:TypeArguments="Thickness"
+                  Android="5" iOS="5"/>
+        </Frame.Padding>
+        <StackLayout Orientation="Horizontal">
+
+            <Grid VerticalOptions="CenterAndExpand"
+            Padding="0"
+            HorizontalOptions="FillAndExpand"
+            BackgroundColor="Transparent">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="*"/>
+                </Grid.RowDefinitions>
+
+                <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+                    <controls:CircleImage Source="{Binding ProfileImage}" VerticalOptions="Start" HeightRequest="30" WidthRequest="30"></controls:CircleImage>
+                    <Label FontAttributes="None"
+               Grid.Row="0"
+               HorizontalTextAlignment="Start"
+               VerticalTextAlignment="Center"
+               FontSize="14"
+               Text="{Binding Text , Mode = TwoWay}" TextColor="Gray" >
+                    </Label>
+                </StackLayout>
+            </Grid>
+        </StackLayout>
+    </Frame>
+</ContentView>

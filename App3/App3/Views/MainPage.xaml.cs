@@ -4,6 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using App3.Models;
+using App3.ViewModel;
+
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -30,7 +32,6 @@ namespace App3.Views
             enUser.Completed += (s, e) => enPass.Focus();
             enPass.Completed += (s, e) => Button_Clicked(s, e);
         }
-
 
 
 
@@ -62,11 +63,11 @@ namespace App3.Views
             if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
 
-                User user = new User(enUser.Text, enPass.Text);
+                Constants.user = new User(enUser.Text, enPass.Text);
 
-                if (user.CheckInformation(GetUsers()))
+                if (Constants.user.CheckInformation(GetUsers()))
                 {
-                    Application.Current.MainPage = new NavigationPage(new Page1());
+                    Application.Current.MainPage = new NavigationPage(new FeedPage());
                 }
                 else
                     DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
@@ -77,9 +78,10 @@ namespace App3.Views
 
         }
 
+
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Page1());
+            await Navigation.PushAsync(new TicketPage(1));
         }
     }
 

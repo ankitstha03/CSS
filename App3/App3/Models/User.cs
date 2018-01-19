@@ -7,7 +7,7 @@ namespace App3.Models
     public class User
     {
         private int Id { get; set; }
-        private string Username { get; set; }
+        public string Username { get; set; }
         private string Password { get; set; }
 
         public User() { }
@@ -51,5 +51,7 @@ namespace App3.Models
             return false;
 
         }
+
+     
     }
 }

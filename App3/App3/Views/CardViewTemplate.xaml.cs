@@ -9,12 +9,12 @@ using Xamarin.Forms.Xaml;
 
 namespace App3.Views
 {
-    [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class CardViewTemplate : ContentView
-    {
-        public CardViewTemplate()
-        {
-            InitializeComponent();
-        }
-    }
+	[XamlCompilation(XamlCompilationOptions.Compile)]
+	public partial class CardViewTemplate : ContentView
+	{
+		public CardViewTemplate ()
+		{
+			InitializeComponent ();
+		}
+	}
 }

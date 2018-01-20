@@ -161,14 +161,12 @@ namespace App3.Views
 
         private void Onactivated(object sender, EventArgs e)
         {
-             Navigation.PushAsync(new SettingPage());
+             Navigation.PushAsync(new SettingPage(), true);
         }
 
         private void Onlogout(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
-
-      
 
         }
     }

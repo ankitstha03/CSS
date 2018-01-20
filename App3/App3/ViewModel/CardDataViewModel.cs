@@ -11,13 +11,13 @@ namespace App3.ViewModel
 {
     class CardDataViewModel
     {
-        public IList<Ticket> CardDataCollection { get; set; }
-
-        public object SelectedItem { get; set; }
+        public ObservableCollection<Ticket>  CardDataCollection = new ObservableCollection<Ticket>
+                {
+                 };
+    public object SelectedItem { get; set; }
 
         public CardDataViewModel()
         {
-            CardDataCollection = new List<Ticket>();
             GenerateCardModel();
         }
 
@@ -38,13 +38,15 @@ namespace App3.ViewModel
             }
 
 
-
-
-            //   AlertColor =  Color.Green : Color.Blue,    This can be added to set alert dialog inside card data model
-
-
-
             }
+        }
+
+        public IEnumerable<Ticket> GetCard(string sear=null)
+        {
+            if(String.IsNullOrWhiteSpace(sear))
+                return CardDataCollection;
+
+            return CardDataCollection.Where(c => c.Title.StartsWith(sear));
         }
     }
 }

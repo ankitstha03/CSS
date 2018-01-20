@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
+using App3.Views;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,12 +13,24 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainCarouselPage : CarouselPage
     {
+        App app = Application.Current as App;
+
         public MainCarouselPage()
         {
             InitializeComponent();
         }
 
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
+            
+        }
 
-        private void Button_Clicked(object sender, EventArgs e) => Application.Current.MainPage = new NavigationPage(new Views.MainPage());
+        private void Button_Clicked(object sender, EventArgs e)
+        {
+            app.Nsession = "1";
+            Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
     }
 }

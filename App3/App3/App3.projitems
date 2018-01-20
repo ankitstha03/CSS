@@ -15,12 +15,10 @@
     <Compile Include="$(MSBuildThisFileDirectory)App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
     </Compile>
-
     <Compile Include="$(MSBuildThisFileDirectory)MainCarouselPage.xaml.cs">
       <DependentUpon>MainCarouselPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="$(MSBuildThisFileDirectory)Models\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Ticket.cs" />
@@ -43,12 +41,14 @@
       <DependentUpon>CardViewTemplate.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-
     <Compile Include="$(MSBuildThisFileDirectory)Views\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-
+    <Compile Include="$(MSBuildThisFileDirectory)Views\TicketFormPage.xaml.cs">
+      <DependentUpon>TicketFormPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\TicketPage.xaml.cs">
       <DependentUpon>TicketPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -85,18 +85,19 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SettingPage.xaml">
-
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-
-<ItemGroup>
-
+  <ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainCarouselPage.xaml">
-
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\TicketFormPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

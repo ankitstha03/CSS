@@ -29,41 +29,65 @@
             BackgroundColor="Transparent">
                 <Grid.RowDefinitions>
                     <RowDefinition Height="*"/>
-                    <RowDefinition Height="*"/>
                     <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="*"/>
                 </Grid.RowDefinitions>
 
                 <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
-                    <controls:CircleImage Source="{Binding ProfileImage}" VerticalOptions="Start" HeightRequest="30" WidthRequest="30"></controls:CircleImage>
-                    <Label FontAttributes="None"
-               Grid.Row="0"
-               HorizontalTextAlignment="Start"
-               VerticalTextAlignment="Center"
-               FontSize="12"
-               Text="{Binding Title , Mode = TwoWay}" TextColor="Gray" >
-                    </Label>
+                    <controls:CircleImage x:Name="imags" VerticalOptions="Start" HeightRequest="60" WidthRequest="60"></controls:CircleImage>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="Start" >
+                        <Label FontAttributes="None"
+                           Grid.Row="0"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="20"
+                           Text="{Binding Title , Mode = TwoWay}" TextColor="Gray" >
+                        </Label>        
+                        <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+                            <Frame CornerRadius = "12"
+                                OutlineColor = "Transparent"
+                                Padding = "15, 5, 15, 5"
+                                HorizontalOptions = "Start"
+                                VerticalOptions = "Fill"
+                                BackgroundColor = "Aqua">
 
+                                <Label FontAttributes="None"
+                               Grid.Row="0"
+                               HorizontalTextAlignment="Start"
+                               VerticalTextAlignment="Start"
+                               HorizontalOptions="StartAndExpand"
+                               FontSize="16"
+                               Text="{Binding Category, Mode = TwoWay}" TextColor="Black">
+
+                            </Label>
+                            </Frame>
+                            <Frame CornerRadius = "12"
+                                OutlineColor = "Transparent"
+                                Padding = "15, 5, 15, 5"
+                                HorizontalOptions = "End"
+                                VerticalOptions = "Fill"
+                                BackgroundColor = "ForestGreen">
+                                <Label FontAttributes="None"
+                               Grid.Row="0"
+                               HorizontalTextAlignment="End"
+                               VerticalTextAlignment="Center"
+                               HorizontalOptions="End"
+                               FontSize="16"
+                               Text="{Binding Status, Mode = TwoWay}" TextColor="Black">
+
+                                </Label>
+                            </Frame>
+                        </StackLayout>
+
+                    </StackLayout>
 
 
 
 
                 </StackLayout>
-                <Grid Grid.Row="1">
-                    <StackLayout Orientation="Horizontal">
-                        <Label FontAttributes="None"
-               Grid.Row="1"
-               HorizontalTextAlignment="Start"
-               VerticalTextAlignment="Start"
-               FontSize="12"
-               Text="{Binding Status, Mode = TwoWay}" TextColor="Black">
+                
 
-                        </Label>
-                        <Image Source="{Binding  ProfileImage}"  Grid.Row="2"  WidthRequest="40" HeightRequest="40" HorizontalOptions="End" />
-                    </StackLayout>
-                </Grid>
-
-                <Grid Grid.Row="2"
+                <Grid Grid.Row="1"
               BackgroundColor="Transparent"
               Padding="4">
                     <Grid.ColumnDefinitions>
@@ -75,7 +99,7 @@
                  />
                     <Label Grid.Row="0"
                  Grid.Column="0"
-                 Text="{Binding Status}" HorizontalOptions="Start" VerticalOptions="Start"/>
+                 Text="Employee name here" HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontSize="14"/>
                 </Grid>
 
             </Grid>

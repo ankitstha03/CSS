@@ -9,12 +9,14 @@ namespace App3.Models
         private int Id { get; set; }
         public string Username { get; set; }
         private string Password { get; set; }
+        public string ProfileImage { get; set; }
 
         public User() { }
-        public User(string Username, string Password)
+        public User(string Username, string Password, string imag = "profile.png")
         {
             this.Username = Username;
             this.Password = Password;
+            this.ProfileImage = imag;
         }
 
 

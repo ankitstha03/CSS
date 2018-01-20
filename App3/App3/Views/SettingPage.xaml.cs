@@ -54,7 +54,7 @@ namespace App3.Views
                     app.DefColor = hex;
                    ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
                     Application.Current.SavePropertiesAsync();
-                    Navigation.PopAsync();
+                    Navigation.PopAsync(true);
 
                 };
 

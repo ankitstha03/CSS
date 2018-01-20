@@ -1,4 +1,5 @@
-﻿using System;
+﻿using App3.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -15,6 +16,8 @@ namespace App3.Views
 		public CardViewTemplate ()
 		{
 			InitializeComponent ();
+            imags.Source = Constants.user.ProfileImage;
 		}
-	}
+
+        }
 }

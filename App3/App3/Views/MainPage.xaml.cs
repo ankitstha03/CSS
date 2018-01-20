@@ -54,7 +54,7 @@ namespace App3.Views
         }
         private void Tap2GestureRecognizer_Clicked(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new Page2());
+            Navigation.PushAsync(new Page2(),true);
         }
 
         protected override void OnAppearing()
@@ -90,13 +90,13 @@ namespace App3.Views
 
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TicketPage(1));
+            await Navigation.PushAsync(new TicketPage(1),true);
 
         }
 
         private void Onactivated(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SettingPage());
+            Navigation.PushAsync(new SettingPage(),true);
 
         }
     }

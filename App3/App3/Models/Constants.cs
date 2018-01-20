@@ -9,7 +9,7 @@ namespace App3.Models
     class Constants
     {
         public static bool IsDev = true;
-
+        public static int count = 1;
         public static Color BackgroundColor = Color.White;
         public static Color PlaceholderColor = Color.FromHex("#bababa");
         public static Color ButtonColor = Color.FromHex("#3897F0");
@@ -53,13 +53,13 @@ namespace App3.Models
 
            };
 
-        public static Ticket ticketer1 = new Ticket(1, new User("User1", "pass1"), "asdasd", "Pending", _msg );
-        public static Ticket ticketer2 = new Ticket(2, new User("User1", "pass1"), "asdasd", "Pending", _msg);
-        public static Ticket ticketer3 = new Ticket(3, new User("User1", "pass1"), "asdasd", "Pending", _msg);
-        public static Ticket ticketer4 = new Ticket(4, new User("User2", "pass2"), "asdasd", "Pending", _msg);
-        public static Ticket ticketer5 = new Ticket(5, new User("User1", "pass1"), "asdasd", "Pending", _msg);
-        public static Ticket ticketer6 = new Ticket(6, new User("User1", "pass1"), "asdasd", "Pending", _msg);
-        public static Ticket ticketer7 = new Ticket(7, new User("User2", "pass2"), "asdasd", "Pending", _msg);
+        public static Ticket ticketer1 = new Ticket(count++, new User("User1", "pass1"), "Title is here here here", "Category",  _msg, "Pending");
+        public static Ticket ticketer2 = new Ticket(count++, new User("User1", "pass1"), "asdasd", "Category", _msg, "Pending");
+        public static Ticket ticketer3 = new Ticket(count++, new User("User1", "pass1"), "vfdsd", "Category", _msg, "Pending");
+        public static Ticket ticketer4 = new Ticket(count++, new User("User2", "pass2"), "Title is here here here", "Category", _msg, "Pending");
+        public static Ticket ticketer5 = new Ticket(count++, new User("User1", "pass1"), "Title is here here here Title is here here here Title is here here here", "Category", _msg, "Pending");
+        public static Ticket ticketer6 = new Ticket(count++, new User("User1", "pass1"), "Title is here here here", "Category", _msg);
+        public static Ticket ticketer7 = new Ticket(count++, new User("User2", "pass2"), "Title is here here here", "Category", _msg);
 
 
         public static List<Ticket> _ticket = new List<Ticket>()

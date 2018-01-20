@@ -1,0 +1,52 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="App3.Views.TicketFormPage"
+             Title="Send a new ticket">
+    <ContentPage.Padding>
+        <OnPlatform x:TypeArguments="Thickness">
+            <OnPlatform.iOS>
+                0,20,0,0
+            </OnPlatform.iOS>
+            <OnPlatform.Android>
+                0,0,0,0
+            </OnPlatform.Android>
+            <OnPlatform.WinPhone>
+                0,0,0,0
+            </OnPlatform.WinPhone>
+        </OnPlatform>
+    </ContentPage.Padding>
+
+    <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
+        <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
+        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
+        <ToolbarItem x:Name="Logout" Text="Sign Out" Order="Secondary" Activated="Onlogout"/>
+
+    </ContentPage.ToolbarItems>
+
+    <ContentPage.Content>
+
+            <StackLayout Margin="20,0,20,0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand">
+                <Picker x:Name="categ" Title="Select Category" HeightRequest="50" HorizontalOptions="FillAndExpand" >
+                    <Picker.Items>
+                        <x:String>Category1</x:String>
+                        <x:String>Category2</x:String>
+                        <x:String>Category3</x:String>
+                        <x:String>Category4</x:String>
+                        <x:String>Category5</x:String>
+                    </Picker.Items>
+                </Picker>
+
+                <Entry  x:Name="entsub" HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Subject of your ticket"  FontSize="16"/>
+                <Entry  x:Name="entmsg" HorizontalOptions="FillAndExpand" Placeholder="Message of the ticket" HeightRequest="50"  FontSize="16"/>
+                <Button Text="Send Ticket" HorizontalOptions="FillAndExpand" x:Name="btntick" TextColor="White" HeightRequest="50"   Clicked="Button_Clicked"/>
+                    
+            </StackLayout>
+
+
+
+
+    </ContentPage.Content>
+</ContentPage>

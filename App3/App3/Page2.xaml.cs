@@ -78,7 +78,7 @@ namespace App3
         }
         private void Onactivated(object sender, EventArgs e)
         {
-            Navigation.PushAsync(new SettingPage());
+            Navigation.PushAsync(new SettingPage(),true);
         }
 
         protected override void OnAppearing()

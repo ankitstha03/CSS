@@ -3,6 +3,7 @@
              Padding="10,20,10,10"
              xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="App3.Views.SettingPage">
+             x:Class="App3.Views.SettingPage"
+             Title="Settings">
 
 </ContentPage>

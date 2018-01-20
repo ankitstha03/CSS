@@ -13,13 +13,17 @@ namespace App3
 	public partial class App : Application
 	{
         private const string color = "Colorer";
+        private const string session = "Session";
+
 
         public App ()
 		{
 			InitializeComponent();
-
-            	MainPage = new NavigationPage(new MainCarouselPage());
-		}
+            if (Nsession == "0")
+                MainPage = new NavigationPage(new MainCarouselPage());
+            else
+                MainPage = new NavigationPage(new MainPage());
+        }
 
         protected override void OnStart()
         {
@@ -51,6 +55,24 @@ namespace App3
             set
             {
                 Properties[color] = value;
+            }
+
+        }
+
+        public string Nsession
+        {
+            get
+            {
+                if (Properties.ContainsKey(session))
+                    return Properties[session].ToString();
+
+                else
+                    return "0";
+            }
+
+            set
+            {
+                Properties[session] = value;
             }
 
         }

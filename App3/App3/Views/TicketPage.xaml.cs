@@ -15,6 +15,7 @@ namespace App3.Views
 	{
         Ticket ticketer=new Ticket();
         int count=0;
+
         App app = Application.Current as App;
 
         Entry msgent = new Entry { Placeholder = "Write a message",  HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
@@ -85,6 +86,8 @@ namespace App3.Views
 
             layout.Children.Add(new Label { HeightRequest = 0, BackgroundColor = Color.Transparent, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
 
+
+
             foreach (Message msg in ticketer.Msg)
             {
                 count += 1;
@@ -94,11 +97,13 @@ namespace App3.Views
                     {
                         CornerRadius = 12,
                         OutlineColor = Color.Transparent,
+
                         Padding = new Thickness(15, 5, 15, 5),
                         Margin = new Thickness(0, 0, 50, 0),
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Fill,
                         BackgroundColor = Color.FromHex(app.DefColor)
+
                     };
                     temp.Content = new Label { Text = msg.Textmess, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
                     layout.Children.Add(temp);
@@ -122,7 +127,6 @@ namespace App3.Views
             }
 
 
-
             view.Content = layout;
 
             var layout1 = new StackLayout
@@ -141,9 +145,11 @@ namespace App3.Views
                 Padding = new Thickness(0, 0, 0, 0),
                 Orientation = StackOrientation.Vertical
             };
+
             layout2.Children.Add(new Label { Text = ticketer.Status, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center, HeightRequest = 40, BackgroundColor = Color.FromHex("#121212"), FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
             layout2.Children.Add(view);
             layout2.Children.Add(layout1);
+
 
             Content = layout2;
             var abc = new Label { HeightRequest = 0, BackgroundColor = Color.Transparent };
@@ -151,6 +157,7 @@ namespace App3.Views
             view.ScrollToAsync(abc, ScrollToPosition.End, false);
 
         }
+
 
         private void Onactivated(object sender, EventArgs e)
         {
@@ -160,6 +167,8 @@ namespace App3.Views
         private void Onlogout(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
+
+      
 
         }
     }

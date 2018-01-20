@@ -6,6 +6,7 @@
              xmlns:local="clr-namespace:App3">
 
 
+
     <ContentPage.ToolbarItems>
 
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
@@ -14,4 +15,5 @@
         <ToolbarItem x:Name="Logout" Text="Sign Out" Order="Secondary" Activated="Onlogout"/>
 
     </ContentPage.ToolbarItems>
+
 </ContentPage>

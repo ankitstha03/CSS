@@ -21,6 +21,7 @@ namespace App3
             InitializeComponent();
             
             
+
         }
 
         async private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -51,4 +52,5 @@ namespace App3
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
         }
         }
+
 }

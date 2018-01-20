@@ -61,6 +61,7 @@ namespace App3.Models
         public static Ticket ticketer6 = new Ticket(6, new User("User1", "pass1"), "asdasd", "Pending", _msg);
         public static Ticket ticketer7 = new Ticket(7, new User("User2", "pass2"), "asdasd", "Pending", _msg);
 
+
         public static List<Ticket> _ticket = new List<Ticket>()
         {
             ticketer1,

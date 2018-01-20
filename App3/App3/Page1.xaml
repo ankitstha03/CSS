@@ -20,22 +20,37 @@
     </ContentPage.ToolbarItems>
 
     <StackLayout Orientation="Vertical">
-        <Label Text="Google List View"
-             VerticalOptions="Start"
-             HorizontalTextAlignment="Center"
-             VerticalTextAlignment="Center"
-             BackgroundColor="Transparent"
-             HorizontalOptions="CenterAndExpand" />
-        <ListView x:Name="listView" ItemSelected="listView_ItemSelected" SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
+
+        <Grid BackgroundColor="White">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="40"/>
+                <RowDefinition Height="*"/>
+
+            </Grid.RowDefinitions>
+            <Grid Grid.Row="0"  x:Name="header" >
+
+                <SearchBar HorizontalOptions="FillAndExpand" Placeholder="Search" >
+
+
+                </SearchBar>
+
+
+            </Grid>
+            <Grid Grid.Row="1">
+         
+            <ListView x:Name="listView" ItemSelected="listView_ItemSelected" SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
+
               RowHeight="150" 
               ItemsSource="{Binding CardDataCollection}" HasUnevenRows="True"  >
-            <ListView.ItemTemplate>
-                <DataTemplate>
-                    <ViewCell>
-                        <view:CardViewTemplate/>
-                    </ViewCell>
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <view:CardViewTemplate/>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            </Grid>
+        </Grid>
     </StackLayout>
 </ContentPage>

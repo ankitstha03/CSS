@@ -90,7 +90,7 @@ namespace App3.Views
 
         private async void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new TicketPage(1),true);
+            await Navigation.PushAsync(new Profile(),true);
 
         }
 

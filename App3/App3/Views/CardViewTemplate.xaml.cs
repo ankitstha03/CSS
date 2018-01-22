@@ -16,8 +16,10 @@ namespace App3.Views
 		public CardViewTemplate ()
 		{
 			InitializeComponent ();
+
             imags.Source = Constants.user.ProfileImage;
 		}
 
         }
+
 }

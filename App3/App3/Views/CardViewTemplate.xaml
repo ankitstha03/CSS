@@ -33,6 +33,7 @@
                 </Grid.RowDefinitions>
 
                 <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+
                     <controls:CircleImage x:Name="imags" VerticalOptions="Start" HeightRequest="60" WidthRequest="60"></controls:CircleImage>
                     <StackLayout Orientation="Vertical" HorizontalOptions="Start" >
                         <Label FontAttributes="None"
@@ -50,6 +51,7 @@
                                 HorizontalOptions = "Start"
                                 VerticalOptions = "Fill"
                                 BackgroundColor = "Aqua">
+
 
                                 <Label FontAttributes="None"
                                Grid.Row="0"
@@ -83,7 +85,6 @@
 
 
 
-
                 </StackLayout>
                 
 
@@ -99,7 +100,9 @@
                  />
                     <Label Grid.Row="0"
                  Grid.Column="0"
+
                  Text="Employee name here" HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontSize="14"/>
+
                 </Grid>
 
             </Grid>

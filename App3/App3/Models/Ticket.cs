@@ -17,14 +17,17 @@ namespace App3.Models
 
         public Ticket() { }
         public Ticket(int id,User usr, string title,string category, List<Message> msg, string status = "Unassigned")
+
         {
             this.Id = id;
             this.Currentusr = usr;
             this.Title = title;
+
             this.Category = category;
             this.Status = status;
             this.Msg = msg;
             
+
         }
 
         public Ticket Addmessage(Ticket ticket, Message msg)

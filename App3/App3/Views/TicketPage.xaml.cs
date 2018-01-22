@@ -16,7 +16,9 @@ namespace App3.Views
         Ticket ticketer=new Ticket();
         int count=0;
 
+
         App app = Application.Current as App;
+
 
         Entry msgent = new Entry { Placeholder = "Write a message",  HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
         StackLayout layout = new StackLayout
@@ -37,6 +39,7 @@ namespace App3.Views
 			InitializeComponent ();
             Getticket(id);
             Title = ticketer.Title;
+
             
 
 
@@ -94,6 +97,7 @@ namespace App3.Views
 
 
 
+
             foreach (Message msg in ticketer.Msg)
             {
                 count += 1;
@@ -104,11 +108,13 @@ namespace App3.Views
                         CornerRadius = 12,
                         OutlineColor = Color.Transparent,
 
+
                         Padding = new Thickness(15, 5, 15, 5),
                         Margin = new Thickness(0, 0, 50, 0),
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Fill,
                         BackgroundColor = Color.FromHex(app.DefColor)
+
 
                     };
                     temp.Content = new Label { Text = msg.Textmess, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
@@ -133,6 +139,7 @@ namespace App3.Views
             }
 
 
+
             view.Content = layout;
 
             var layout1 = new StackLayout
@@ -152,9 +159,11 @@ namespace App3.Views
                 Orientation = StackOrientation.Vertical
             };
 
+
             layout2.Children.Add(new Label { Text = ticketer.Status, HorizontalTextAlignment = TextAlignment.Center, VerticalTextAlignment = TextAlignment.Center, HeightRequest = 40, BackgroundColor = Color.FromHex("#121212"), FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
             layout2.Children.Add(view);
             layout2.Children.Add(layout1);
+
 
 
             Content = layout2;
@@ -165,6 +174,7 @@ namespace App3.Views
         }
 
 
+
         private void Onactivated(object sender, EventArgs e)
         {
              Navigation.PushAsync(new SettingPage(), true);
@@ -173,6 +183,7 @@ namespace App3.Views
         private void Onlogout(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
+
 
         }
     }

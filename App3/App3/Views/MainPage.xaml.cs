@@ -76,7 +76,7 @@ namespace App3.Views
 
                 if (Constants.user.CheckInformation(GetUsers()))
                 {
-                    Application.Current.MainPage = new NavigationPage(new Page1());
+                    Application.Current.MainPage = new NavigationPage(new FeedPage());
                 }
                 else
                     DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
@@ -90,9 +90,11 @@ namespace App3.Views
 
 
 
+
         private void Onactivated(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SettingPage(),true);
+
 
         }
     }

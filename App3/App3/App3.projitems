@@ -26,11 +26,28 @@
       <DependentUpon>Profile.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)FeedPage.xaml.cs">
+      <DependentUpon>FeedPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
+
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Feed.cs" />
+
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\FeedCardDataViewModel.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Views\CommentPage.xaml.cs">
+      <DependentUpon>CommentPage.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Views\FeedCardViewTemplate.xaml.cs">
+      <DependentUpon>FeedCardViewTemplate.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Views\Mainpage.xaml.cs">
@@ -45,6 +62,7 @@
       <DependentUpon>CardViewTemplate.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+
     <Compile Include="$(MSBuildThisFileDirectory)Views\SettingPage.xaml.cs">
       <DependentUpon>SettingPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -53,6 +71,7 @@
       <DependentUpon>TicketFormPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+
     <Compile Include="$(MSBuildThisFileDirectory)Views\TicketPage.xaml.cs">
       <DependentUpon>TicketPage.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -89,13 +108,37 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\SettingPage.xaml">
+
+
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+ <ItemGroup>
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)FeedPage.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)MainCarouselPage.xaml">
+
+
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+<ItemGroup>
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\FeedCardViewTemplate.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -107,7 +150,18 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Views\CommentPage.xaml">
+
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+
+<ItemGroup>
     <EmbeddedResource Include="$(MSBuildThisFileDirectory)Profile.xaml">
+
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>

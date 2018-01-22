@@ -23,6 +23,7 @@ namespace App3
         {
             InitializeComponent();
 
+
         }
 
         async private void listView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
@@ -78,6 +79,7 @@ namespace App3
             abc = new CardDataViewModel();
             listView.ItemsSource = abc.GetCard().Reverse<Ticket>();
             Icon.Icon = Constants.user.ProfileImage;
+
 
         }
     }

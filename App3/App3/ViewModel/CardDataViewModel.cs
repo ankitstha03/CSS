@@ -11,6 +11,7 @@ namespace App3.ViewModel
 {
     class CardDataViewModel
     {
+
         public ObservableCollection<Ticket>  CardDataCollection = new ObservableCollection<Ticket>
                 {
                  };
@@ -18,6 +19,7 @@ namespace App3.ViewModel
 
         public CardDataViewModel()
         {
+
             GenerateCardModel();
         }
 

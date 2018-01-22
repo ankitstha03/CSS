@@ -22,10 +22,10 @@ namespace App3
             Title = Constants.user.Username;
             imagp.Source = Constants.user.ProfileImage;
             usern.Text = Constants.user.Username;
-            lbluser.Text = Constants.user.Username;
-            lblname.Text = Constants.user.Username;
-            lbladdress.Text = Constants.user.Username;
-            lblphn.Text = Constants.user.Username;
+            lbluser.Text = Constants.user.Name;
+            lblname.Text = Constants.user.Name;
+            lbladdress.Text = Constants.user.Name;
+            lblphn.Text = Constants.user.Name;
 
         }
 
@@ -49,6 +49,33 @@ namespace App3
         private void Ontickets(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
+
+        private void Userdata1(object sender, TextChangedEventArgs e)
+        {
+            Constants.user.Name =e.NewTextValue ;
+
+        }
+
+        private void Userdata2(object sender, TextChangedEventArgs e)
+        {
+            Constants.user.Name = e.NewTextValue;
+
+
+        }
+
+        private void Userdata3(object sender, TextChangedEventArgs e)
+        {
+            Constants.user.Name = e.NewTextValue;
+
+
+        }
+
+        private void Userdata4(object sender, TextChangedEventArgs e)
+        {
+            Constants.user.Name = e.NewTextValue;
+
 
         }
 

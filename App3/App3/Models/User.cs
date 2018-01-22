@@ -8,12 +8,15 @@ namespace App3.Models
     {
         private int Id { get; set; }
         public string Username { get; set; }
+        public string Name { get; set; }
         private string Password { get; set; }
         public string ProfileImage { get; set; }
 
         public User() { }
-        public User(string Username, string Password, string imag = "profile.png")
+
+        public User(string Username, string Password, string Name="", string imag = "profile.png")
         {
+            this.Name = Name;
             this.Username = Username;
             this.Password = Password;
             this.ProfileImage = imag;

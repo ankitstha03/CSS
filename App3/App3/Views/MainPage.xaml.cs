@@ -80,11 +80,11 @@ namespace App3.Views
         {
             if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
-
                 Constants.user = new User(enUser.Text, enPass.Text);
 
                 if (Constants.user.CheckInformation(GetUsers()))
                 {
+                    Constants.user = Constants._users.SingleOrDefault(x => x.Username == enUser.Text);
                     Application.Current.MainPage = new NavigationPage(new Page1());
                 }
                 else

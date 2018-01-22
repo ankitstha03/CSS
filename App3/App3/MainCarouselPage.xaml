@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <CarouselPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.MainCarouselPage"
@@ -6,9 +6,12 @@
     <ContentPage BackgroundColor="White">
         <ContentPage.Content>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
+                <Label x:Name="LoadingLabel"
+        Text="Loading..."
+        HorizontalOptions="Center"
+        IsVisible="false" />
+                <WebView x:Name="Browser"  WidthRequest="1000" Source="http://www.google.com" Navigated="Browser_Navigated" Navigating="Browser_Navigating"/>
 
-
-               
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

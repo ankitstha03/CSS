@@ -108,5 +108,35 @@ namespace App3.Views
 
 
         }
+
+        private void Icon_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Profile());
+
+
+        }
+
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new FeedPage());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
+
+        private void Onactivated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage(), true);
+        }
+
+        private void Onlogout(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MainPage());
+
+
+        }
     }
 }

@@ -41,6 +41,17 @@ namespace App3
             Navigation.PushAsync(new SettingPage(), true);
         }
 
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage=new NavigationPage(new FeedPage());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
+
         private void Onlogout(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());

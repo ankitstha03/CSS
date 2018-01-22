@@ -42,9 +42,10 @@ namespace App3
             Navigation.PushAsync(new SettingPage(),true);
         }
 
-        private async void Icon_Clicked(object sender, EventArgs e)
+        private void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Profile(), true);
+            Application.Current.MainPage = new NavigationPage(new Profile());
+
 
         }
         private void Onlogout(object sender, EventArgs e)
@@ -66,6 +67,18 @@ namespace App3
             
         }
 
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new FeedPage());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
+
+
         private void Ticket_Add(object sender, EventArgs e)
         {
             Navigation.PushAsync(new TicketFormPage(),true);
@@ -79,8 +92,12 @@ namespace App3
             abc = new CardDataViewModel();
             listView.ItemsSource = abc.GetCard().Reverse<Ticket>();
             Icon.Icon = Constants.user.ProfileImage;
-
-
+            listView.Margin = new Thickness(-200,0,200,0);
+            listView.TranslateTo(200, 0, 1000, Easing.SpringIn);
+            newticket.Opacity = 0;
+            newticket.FadeTo(1, 1000,Easing.SpringIn);
+            listView.Opacity = 0;
+            listView.FadeTo(1, 1000, Easing.SpringIn);
         }
     }
 

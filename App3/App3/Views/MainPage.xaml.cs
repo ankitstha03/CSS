@@ -64,6 +64,15 @@ namespace App3.Views
             enUser.PlaceholderColor = Color.FromHex(app.DefColor);
             enPass.TextColor = Color.FromHex(app.DefColor);
             btnLogin.BackgroundColor = Color.FromHex(app.DefColor);
+            enUser.Margin=new Thickness(-200, 0, 200, 0);
+            enPass.Margin = new Thickness(200, 0, -200, 0);
+            grd1.Opacity = 0;
+            btnLogin.Opacity = 0;
+            enUser.TranslateTo(200, 0, 1000, Easing.SpringIn);
+            enPass.TranslateTo(-200, 0, 1000, Easing.SpringIn);
+            btnLogin.FadeTo(1, 2000, Easing.SpringIn);
+            grd1.FadeTo(1, 300, Easing.SpringIn);
+
 
         }
 
@@ -76,7 +85,7 @@ namespace App3.Views
 
                 if (Constants.user.CheckInformation(GetUsers()))
                 {
-                    Application.Current.MainPage = new NavigationPage(new FeedPage());
+                    Application.Current.MainPage = new NavigationPage(new Page1());
                 }
                 else
                     DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");

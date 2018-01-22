@@ -35,6 +35,14 @@ namespace App3.Views
             entsub.PlaceholderColor = Color.FromHex(app.DefColor);
             btntick.BackgroundColor = Color.FromHex(app.DefColor);
             Icon.Icon = Constants.user.ProfileImage;
+            categ.Margin = new Thickness(-200, 0, 200, 0);
+            entsub.Margin = new Thickness(200, 0, -200, 0);
+            entmsg.Margin = new Thickness(-200, 0, 200, 0);
+            btntick.Opacity = 0;
+            categ.TranslateTo(200, 0, 1000, Easing.SpringIn);
+            entsub.TranslateTo(-200, 0, 1000, Easing.SpringIn);
+            entmsg.TranslateTo(200, 0, 1000, Easing.SpringIn);
+            btntick.FadeTo(1, 2000, Easing.SpringIn);
 
         }
 
@@ -43,9 +51,21 @@ namespace App3.Views
             Navigation.PushAsync(new SettingPage(),true);
         }
 
-        private async void Icon_Clicked(object sender, EventArgs e)
+        private void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Profile(), true);
+            Application.Current.MainPage = new NavigationPage(new Profile());
+
+
+        }
+
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new FeedPage());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
 
         }
 

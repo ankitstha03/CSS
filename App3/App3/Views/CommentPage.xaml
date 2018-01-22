@@ -2,11 +2,22 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Views.CommentPage">
+
+    <ContentPage.ToolbarItems>
+        <ToolbarItem x:Name="Icon"  Clicked="Icon_Clicked"/>
+        <ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
+        <ToolbarItem x:Name="Tickets" Text="Tickets" Order="Secondary" Activated="Ontickets"/>
+        <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
+        <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
+        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
+        <ToolbarItem x:Name="Logout" Text="Sign Out" Order="Secondary" Activated="Onlogout"/>
+
+    </ContentPage.ToolbarItems>
     <ContentPage.Content>
+
+    
         <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

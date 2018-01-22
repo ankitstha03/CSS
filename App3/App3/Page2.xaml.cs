@@ -81,6 +81,7 @@ namespace App3
             Navigation.PushAsync(new SettingPage(),true);
         }
 
+
         protected override void OnAppearing()
         {
             base.OnAppearing();

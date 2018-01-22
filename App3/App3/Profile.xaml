@@ -4,6 +4,9 @@
              x:Class="App3.Profile">
 
     <ContentPage.ToolbarItems>
+
+        <ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
+        <ToolbarItem x:Name="Tickets" Text="Tickets" Order="Secondary" Activated="Ontickets"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>

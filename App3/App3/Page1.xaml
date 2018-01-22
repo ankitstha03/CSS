@@ -12,6 +12,7 @@
 
     <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Icon"  Clicked="Icon_Clicked"/>
+        <ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
@@ -19,47 +20,52 @@
 
     </ContentPage.ToolbarItems>
 
-    <StackLayout Orientation="Vertical">
+
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
 
 
-        <Grid BackgroundColor="White">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="40"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="Auto"/>
-            </Grid.RowDefinitions>
-            <Grid Grid.Row="0"  x:Name="header" >
+            <Grid BackgroundColor="White">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="40"/>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
 
-                <SearchBar x:Name="searbar" HorizontalOptions="FillAndExpand" Placeholder="Search..." TextChanged="Onchange">
+                </Grid.RowDefinitions>
+                <Grid Grid.Row="0"  x:Name="header" >
 
-
-                </SearchBar>
+                    <SearchBar x:Name="searbar" HorizontalOptions="FillAndExpand" Placeholder="Search..." TextChanged="Onchange">
 
 
-            </Grid>
-
-            <Grid Grid.Row="1" >
-
-                <Button Text="Send us a ticket" x:Name="newticket" TextColor="White"  VerticalOptions="Start" Clicked="Ticket_Add"/>
+                    </SearchBar>
 
 
-            </Grid>
-            <Grid Grid.Row="2">
-         
-            <ListView x:Name="listView" IsPullToRefreshEnabled="True" Refreshing="Onrefresh" ItemSelected="listView_ItemSelected" SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
+                </Grid>
+
+                <Grid Grid.Row="1" >
+
+                    <Button Text="Send us a ticket" x:Name="newticket" TextColor="White"  VerticalOptions="Start" Clicked="Ticket_Add"/>
+
+
+                </Grid>
+                <Grid Grid.Row="2">
+
+                    <ListView x:Name="listView" IsPullToRefreshEnabled="True" Refreshing="Onrefresh" ItemSelected="listView_ItemSelected" SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
  
-               HasUnevenRows="True"  >
-                <ListView.ItemTemplate>
-                    <DataTemplate>
-                        <ViewCell>
-                            <view:CardViewTemplate/>
-                        </ViewCell>
-                    </DataTemplate>
-                </ListView.ItemTemplate>
-            </ListView>
+                   HasUnevenRows="True" >
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <view:CardViewTemplate/>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </Grid>
             </Grid>
-        </Grid>
 
-    </StackLayout>
+        </StackLayout>  
+    </ContentPage.Content>
+
 </ContentPage>

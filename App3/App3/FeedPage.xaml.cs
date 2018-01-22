@@ -28,5 +28,29 @@ namespace App3
             await Navigation.PushAsync(new CommentPage(dataCard.Id));
             listView.SelectedItem = null;
         }
+
+
+        private void Onactivated(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new SettingPage(), true);
+        }
+
+        private void Icon_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Profile());
+
+
+        }
+        private void Onlogout(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MainPage());
+
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
     }
 }

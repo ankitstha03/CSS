@@ -13,6 +13,12 @@ namespace App3.Views
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class SettingPage : ContentPage
 	{
+        Grid grd = new Grid
+        {
+            RowSpacing = 10,
+            ColumnSpacing = 10
+
+        };
         TapGestureRecognizer tapGestureRecognizer = new TapGestureRecognizer();
 
         public SettingPage ()
@@ -21,12 +27,7 @@ namespace App3.Views
             int counth = 0;
 
             InitializeComponent();
-            var grd = new Grid
-            {
-                RowSpacing = 10,
-                ColumnSpacing=10
-
-            };
+        
 
             var layout = new StackLayout
             {
@@ -84,6 +85,11 @@ namespace App3.Views
             Content = layout;
         }
 
-
-    }
+        protected override void OnAppearing()
+        {
+            base.OnAppearing();
+            grd.Margin = new Thickness(-400, 0, 400, 0);
+            grd.TranslateTo(400, 0, 1000, Easing.SpringIn);
+        }
+        }
 }

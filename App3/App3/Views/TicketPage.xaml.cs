@@ -20,7 +20,7 @@ namespace App3.Views
         App app = Application.Current as App;
 
 
-        Entry msgent = new Entry { Placeholder = "Write a message",  HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
+        Entry msgent = new Entry { Placeholder = "Write a message", Margin=new Thickness(20,0,20,0),  HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
         StackLayout layout = new StackLayout
         {
             Spacing = 10,
@@ -45,9 +45,21 @@ namespace App3.Views
 
         }
 
-        private async void Icon_Clicked(object sender, EventArgs e)
+        private void Icon_Clicked(object sender, EventArgs e)
         {
-            await Navigation.PushAsync(new Profile(), true);
+            Application.Current.MainPage = new NavigationPage(new Profile());
+
+
+        }
+
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new FeedPage());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
 
         }
 
@@ -83,13 +95,15 @@ namespace App3.Views
             
 
         }
+
+
         protected override void OnAppearing()
         {
             base.OnAppearing();
             Icon.Icon = Constants.user.ProfileImage;
             layout.Children.Clear();
             
-            Button senbutton = new Button { Text = "Send", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
+            Button senbutton = new Button { Text = "Send", HeightRequest = 50, Margin = new Thickness(20, 0, 20, 0), VerticalOptions = LayoutOptions.End };
             senbutton.Clicked += new EventHandler(Button_Clicked);
 
 
@@ -110,7 +124,7 @@ namespace App3.Views
 
 
                         Padding = new Thickness(15, 5, 15, 5),
-                        Margin = new Thickness(0, 0, 50, 0),
+                        Margin = new Thickness(-200, 0, 250, 0),
                         HorizontalOptions = LayoutOptions.Start,
                         VerticalOptions = LayoutOptions.Fill,
                         BackgroundColor = Color.FromHex(app.DefColor)
@@ -119,6 +133,10 @@ namespace App3.Views
                     };
                     temp.Content = new Label { Text = msg.Textmess, FontSize = 16, TextColor = Color.White, HorizontalOptions = LayoutOptions.StartAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
                     layout.Children.Add(temp);
+                    temp.Opacity = 0;
+                    temp.FadeTo(1, 1000);
+                    temp.TranslateTo(200, 0, 1000, Easing.SpringIn);
+
                 }
 
                 else
@@ -128,13 +146,18 @@ namespace App3.Views
                         CornerRadius = 12,
                         OutlineColor = Color.Transparent,
                         Padding = new Thickness(15, 5, 15, 5),
-                        Margin = new Thickness(50, 0, 0, 0),
+                        Margin = new Thickness(250, 0, -200, 0),
                         HorizontalOptions = LayoutOptions.End,
                         VerticalOptions = LayoutOptions.Fill,
                         BackgroundColor = Color.FromHex("#eeeeee")
                     };
                     temp.Content = new Label { Text = msg.Textmess, FontSize = 16, TextColor = Color.Black, HorizontalOptions = LayoutOptions.EndAndExpand, VerticalOptions = LayoutOptions.FillAndExpand };
                     layout.Children.Add(temp);
+                    temp.Opacity = 0;
+                    temp.FadeTo(1, 1000);
+                    temp.TranslateTo(-200, 0, 1000, Easing.SpringIn);
+
+
                 }
             }
 
@@ -150,7 +173,10 @@ namespace App3.Views
             };
             layout1.Children.Add(msgent);
             layout1.Children.Add(senbutton);
-
+            msgent.Opacity = 0;
+            senbutton.Opacity = 0;
+            msgent.FadeTo(1, 2000, Easing.SpringIn);
+            senbutton.FadeTo(1, 2000, Easing.SpringIn);
 
             var layout2 = new StackLayout
             {

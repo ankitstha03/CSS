@@ -41,6 +41,11 @@ namespace App3
             Navigation.PushAsync(new SettingPage(),true);
         }
 
+        private async void Icon_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Profile(), true);
+
+        }
         private void Onlogout(object sender, EventArgs e)
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
@@ -72,6 +77,7 @@ namespace App3
             newticket.BackgroundColor = Color.FromHex(app.DefColor);
             abc = new CardDataViewModel();
             listView.ItemsSource = abc.GetCard().Reverse<Ticket>();
+            Icon.Icon = Constants.user.ProfileImage;
 
         }
     }

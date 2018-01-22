@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:local="clr-namespace:App3"
              x:Class="App3.Views.MainPage"
-             Title="CRM App">
+             Title="CSS App">
 
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
@@ -20,7 +20,6 @@
     </ContentPage.Padding>
 
     <ContentPage.ToolbarItems>
-        <ToolbarItem x:Name="Icon" Icon="profile.png" Clicked="Icon_Clicked"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>

@@ -18,6 +18,7 @@ namespace App3.Views
         public TicketFormPage ()
 		{
 			InitializeComponent ();
+            
 		}
 
         private void Onlogout(object sender, EventArgs e)
@@ -33,12 +34,19 @@ namespace App3.Views
             entmsg.PlaceholderColor = Color.FromHex(app.DefColor);
             entsub.PlaceholderColor = Color.FromHex(app.DefColor);
             btntick.BackgroundColor = Color.FromHex(app.DefColor);
+            Icon.Icon = Constants.user.ProfileImage;
 
         }
 
         private void Onactivated(object sender, EventArgs e)
         {
             Navigation.PushAsync(new SettingPage(),true);
+        }
+
+        private async void Icon_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Profile(), true);
+
         }
 
         private void Button_Clicked(object sender, EventArgs e)

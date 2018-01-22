@@ -88,11 +88,7 @@ namespace App3.Views
         }
 
 
-        private async void Icon_Clicked(object sender, EventArgs e)
-        {
-            await Navigation.PushAsync(new Profile(),true);
 
-        }
 
         private void Onactivated(object sender, EventArgs e)
         {

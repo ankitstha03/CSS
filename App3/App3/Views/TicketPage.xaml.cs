@@ -42,6 +42,12 @@ namespace App3.Views
 
         }
 
+        private async void Icon_Clicked(object sender, EventArgs e)
+        {
+            await Navigation.PushAsync(new Profile(), true);
+
+        }
+
         private void Getticket(int id)
         {
             foreach(Ticket ticket in Constants._ticket)
@@ -77,7 +83,7 @@ namespace App3.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
-
+            Icon.Icon = Constants.user.ProfileImage;
             layout.Children.Clear();
             
             Button senbutton = new Button { Text = "Send", HeightRequest = 50, VerticalOptions = LayoutOptions.End };

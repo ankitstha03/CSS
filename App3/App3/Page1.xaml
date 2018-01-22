@@ -11,7 +11,7 @@
     </ContentPage.BindingContext>
 
     <ContentPage.ToolbarItems>
-
+        <ToolbarItem x:Name="Icon"  Clicked="Icon_Clicked"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
         <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>

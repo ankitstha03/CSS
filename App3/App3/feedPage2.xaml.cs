@@ -50,7 +50,7 @@ namespace App3
                 Button commentButton = new Button { Text = "Comment", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
                 commentButton.Clicked += async (sender, e) =>
                 {
-                    await Navigation.PushModalAsync(new CommentPage(feed.Id));
+                    await Navigation.PushAsync(new CommentPage(feed.Id));
                 };
                 layout.Children.Add(commentButton);
                 layout_main.Children.Add(layout);

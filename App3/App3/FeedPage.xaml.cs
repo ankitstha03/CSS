@@ -18,15 +18,5 @@ namespace App3
 			InitializeComponent ();
 		}
 
-        async private void CommentHandler(object sender, SelectedItemChangedEventArgs e)
-        {
-            if (e.SelectedItem == null)
-                return;
-
-            var dataCard = e.SelectedItem as Models.Feed;
-
-            await Navigation.PushAsync(new CommentPage(dataCard.Id));
-            listView.SelectedItem = null;
-        }
     }
 }

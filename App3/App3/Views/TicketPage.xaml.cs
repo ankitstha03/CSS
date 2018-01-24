@@ -45,23 +45,7 @@ namespace App3.Views
 
         }
 
-        private void Icon_Clicked(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new Profile());
-
-
-        }
-
-        private void Onfeed(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new FeedPage());
-        }
-
-        private void Ontickets(object sender, EventArgs e)
-        {
-            Application.Current.MainPage = new NavigationPage(new Page1());
-
-        }
+      
 
         private void Getticket(int id)
         {
@@ -102,8 +86,8 @@ namespace App3.Views
             base.OnAppearing();
             Icon.Icon = Constants.user.ProfileImage;
             layout.Children.Clear();
-            
-            Button senbutton = new Button { Text = "Send", HeightRequest = 50, Margin = new Thickness(20, 0, 20, 0), VerticalOptions = LayoutOptions.End };
+            msgent.PlaceholderColor = Color.FromHex(app.DefColor);
+            Button senbutton = new Button { Text = "Send", HeightRequest = 50, BackgroundColor = Color.FromHex(app.DefColor), Margin = new Thickness(20, 0, 20, 0), VerticalOptions = LayoutOptions.End };
             senbutton.Clicked += new EventHandler(Button_Clicked);
 
 
@@ -199,7 +183,23 @@ namespace App3.Views
 
         }
 
+        private void Icon_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Profile());
 
+
+        }
+
+        private void Onfeed(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new feedPage2());
+        }
+
+        private void Ontickets(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Page1());
+
+        }
 
         private void Onactivated(object sender, EventArgs e)
         {

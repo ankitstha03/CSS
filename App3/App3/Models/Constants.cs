@@ -10,6 +10,8 @@ namespace App3.Models
     {
         public static bool IsDev = true;
         public static int count = 1;
+        public static int count2 = 1;
+
         public static Color BackgroundColor = Color.White;
         public static Color PlaceholderColor = Color.FromHex("#bababa");
         public static Color ButtonColor = Color.FromHex("#3897F0");
@@ -70,13 +72,13 @@ namespace App3.Models
 
            };
 
-        public static Feed feed1 = new Feed(1, new User("User1", "pass1"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id erat nunc. Vestibulum feugiat lacus nec libero dignissim convallis. Donec nisl eros, faucibus ac sapien at, tristique consectetur lectus. Quisque porta consequat condimentum. Fusce scelerisque, velit nec dictum faucibus, erat enim fringilla augue, id condimentum massa magna eu nibh. Suspendisse malesuada sapien ac molestie imperdiet. Fusce scelerisque, arcu et commodo luctus, risus massa vehicula est, a elementum ante sapien et purus. Aenean enim odio, lacinia at eros sit amet, aliquet luctus eros. Proin vitae lacus sit amet lacus porttitor venenatis. Nunc at diam bibendum, dictum urna molestie, aliquam mauris. Vestibulum dignissim malesuada lorem eget fringilla. Donec blandit nisl non orci malesuada scelerisque. Ut enim turpis, mattis eu auctor a, venenatis eu enim.  ", _comments);
-        public static Feed feed2 = new Feed(2, new User("User1", "pass1"), "does it?", _comments);
+        public static Feed feed1 = new Feed(count2++, new User("User1", "pass1"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id erat nunc. Vestibulum feugiat lacus nec libero dignissim convallis. Donec nisl eros, faucibus ac sapien at, tristique consectetur lectus. Quisque porta consequat condimentum. Fusce scelerisque, velit nec dictum faucibus, erat enim fringilla augue, id condimentum massa magna eu nibh. Suspendisse malesuada sapien ac molestie imperdiet. Fusce scelerisque, arcu et commodo luctus, risus massa vehicula est, a elementum ante sapien et purus. Aenean enim odio, lacinia at eros sit amet, aliquet luctus eros. Proin vitae lacus sit amet lacus porttitor venenatis. Nunc at diam bibendum, dictum urna molestie, aliquam mauris. Vestibulum dignissim malesuada lorem eget fringilla. Donec blandit nisl non orci malesuada scelerisque. Ut enim turpis, mattis eu auctor a, venenatis eu enim.  ", new List<Comment>());
+        public static Feed feed2 = new Feed(count2++, new User("User1", "pass1"), "does it?",_comments);
+        
+        public static Feed feed3 = new Feed(count2++, new User("User1", "pass1"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id erat nunc. Vestibulum feugiat lacus nec libero dignissim convallis. Donec nisl eros, faucibus ac sapien at, tristique consectetur lectus. Quisque porta consequat condimentum. Fusce scelerisque, velit nec dictum faucibus, erat enim fringilla augue, id condimentum massa magna eu nibh. Suspendisse malesuada sapien ac molestie imperdiet. Fusce scelerisque, arcu et commodo luctus, risus massa vehicula est, a elementum ante sapien et purus. Aenean enim odio, lacinia at eros sit amet, aliquet luctus eros. Proin vitae lacus sit amet lacus porttitor venenatis. Nunc at diam bibendum, dictum urna molestie, aliquam mauris. Vestibulum dignissim malesuada lorem eget fringilla. Donec blandit nisl non orci malesuada scelerisque. Ut enim turpis, mattis eu auctor a, venenatis eu enim.  ", _comments);
+        public static Feed feed4 = new Feed(count2++, new User("User1", "pass1"), "does it?", _comments);
 
-        public static Feed feed3 = new Feed(1, new User("User1", "pass1"), "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Etiam id erat nunc. Vestibulum feugiat lacus nec libero dignissim convallis. Donec nisl eros, faucibus ac sapien at, tristique consectetur lectus. Quisque porta consequat condimentum. Fusce scelerisque, velit nec dictum faucibus, erat enim fringilla augue, id condimentum massa magna eu nibh. Suspendisse malesuada sapien ac molestie imperdiet. Fusce scelerisque, arcu et commodo luctus, risus massa vehicula est, a elementum ante sapien et purus. Aenean enim odio, lacinia at eros sit amet, aliquet luctus eros. Proin vitae lacus sit amet lacus porttitor venenatis. Nunc at diam bibendum, dictum urna molestie, aliquam mauris. Vestibulum dignissim malesuada lorem eget fringilla. Donec blandit nisl non orci malesuada scelerisque. Ut enim turpis, mattis eu auctor a, venenatis eu enim.  ", _comments);
-        public static Feed feed4 = new Feed(2, new User("User1", "pass1"), "does it?", _comments);
-
-
+        
 
         public static List<Feed> _feed = new List<Feed>()
         {

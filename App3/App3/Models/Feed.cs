@@ -10,17 +10,15 @@ namespace App3.Models
         public User Currentusr { get; set; }
         public string Title { get; set; }
         public List<Comment> Comments { get; set; }
-        public string ProfileImage { get; set; }
 
 
         public Feed() { }
-        public Feed(int id, User usr, string title, List<Comment> comments, string imag = "profile.png")
+        public Feed(int id, User usr, string title, List<Comment> comment)
         {
             this.Id = id;
             this.Currentusr = usr;
             this.Title = title;
-            this.Comments = comments;
-            this.ProfileImage = imag;
+            this.Comments = comment;
         }
 
         public Feed AddComment(Feed feed, Comment comment)

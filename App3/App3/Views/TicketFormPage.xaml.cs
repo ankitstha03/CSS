@@ -60,7 +60,7 @@ namespace App3.Views
 
         private void Onfeed(object sender, EventArgs e)
         {
-            Application.Current.MainPage = new NavigationPage(new FeedPage());
+            Application.Current.MainPage = new NavigationPage(new feedPage2());
         }
 
         private void Ontickets(object sender, EventArgs e)

@@ -1,4 +1,4 @@
-﻿using System;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -36,6 +36,16 @@ namespace App3
         {
             app.Nsession = "1";
             Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
+
+        private void Browser_Navigated(object sender, WebNavigatedEventArgs e)
+        {
+            LoadingLabel.IsVisible = false;
+        }
+
+        private void Browser_Navigating(object sender, WebNavigatingEventArgs e)
+        {
+            LoadingLabel.IsVisible = true;
         }
     }
 }

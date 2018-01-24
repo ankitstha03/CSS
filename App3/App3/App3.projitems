@@ -30,6 +30,10 @@
       <DependentUpon>FeedPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)feedPage2.xaml.cs">
+      <DependentUpon>feedPage2.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Feed.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
@@ -140,12 +144,23 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Profile.xaml">
+
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)feedPage2.xaml">
+
       <SubType>Designer</SubType>
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>
-  <ItemGroup>
-    <Content Include="$(MSBuildThisFileDirectory)gifview.html" />
+
+<ItemGroup>
+
+    <EmbeddedResource Include="$(MSBuildThisFileDirectory)Profile.xaml">
+
+
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
   </ItemGroup>
+
 </Project>

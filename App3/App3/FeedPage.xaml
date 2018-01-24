@@ -27,7 +27,7 @@
              VerticalTextAlignment="Center"
              BackgroundColor="Transparent"
              HorizontalOptions="CenterAndExpand" />
-        <ListView x:Name="listView" ItemSelected="CommentHandler" SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
+        <ListView x:Name="listView"  SelectedItem="{Binding SelcetedItem,Mode=TwoWay}" 
               RowHeight="150" 
               ItemsSource="{Binding CardDataCollection}" HasUnevenRows="True"  >
             <ListView.ItemTemplate>

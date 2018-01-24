@@ -18,6 +18,7 @@ namespace App3
 			InitializeComponent ();
 		}
 
+<<<<<<< HEAD
         async private void CommentHandler(object sender, SelectedItemChangedEventArgs e)
         {
             if (e.SelectedItem == null)
@@ -52,5 +53,6 @@ namespace App3
             Application.Current.MainPage = new NavigationPage(new Page1());
 
         }
+
     }
 }

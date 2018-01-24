@@ -35,20 +35,61 @@ namespace App3.Views
             //Title = CurrentFeed.Title;
             Button senbutton = new Button { Text = "Send", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
             senbutton.Clicked += new EventHandler(Button_Clicked);
+            Frame abc = new Frame
+            {
+                IsClippedToBounds = true,
+                HasShadow = true,
+                BackgroundColor = Color.White,
+                OutlineColor = Color.Gray,
+                Margin = new Thickness(7),
+                Padding = new Thickness(5)
+            };
+
+            StackLayout layout3 = new StackLayout();
+            layout3.Children.Add(new Label { HeightRequest = 0, BackgroundColor = Color.Transparent, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
+            layout3.Children.Add(new Label { Text = CurrentFeed.Title });
 
 
+
+            Label commcount = new Label { Text = CurrentFeed.Comments.Count.ToString() + " comments" };
+            StackLayout sl2 = new StackLayout
+            {
+                Orientation = StackOrientation.Horizontal
+            };
+            sl2.Children.Add(commcount);
+            layout3.Children.Add(sl2);
+            abc.Content = layout3;
             layout.Children.Add(new Label { HeightRequest = 0, BackgroundColor = Color.Transparent, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
-            layout.Children.Add(new Label { Text = CurrentFeed.Title});
+            layout.Children.Add(abc);
             foreach (Comment comment in CurrentFeed.Comments)
             {
-                
-                    Label username = new Label { Text = comment.Currentusr.Username, FontSize = 14 };
-                    Label commenter = new Label { Text = comment.Text, FontSize = 12 };
+                Frame abc2 = new Frame
+                {
+                    IsClippedToBounds = true,
+                    HasShadow = true,
+                    BackgroundColor = Color.White,
+                    OutlineColor = Color.Gray,
+                    Margin = new Thickness(7),
+                    Padding = new Thickness(5)
+                };
+                Image imag = new Image { Source = comment.Currentusr.ProfileImage, WidthRequest=40,HeightRequest=40 };
+                Label username = new Label { Text = comment.Currentusr.Username, HorizontalOptions=LayoutOptions.Center, FontSize = 10 };
+                    Label commenter = new Label { Text = comment.Text, FontSize = 18, VerticalOptions=LayoutOptions.Center };
                     StackLayout sl = new StackLayout();
                     sl.Orientation = StackOrientation.Horizontal;
-                    sl.Children.Add(username);
-                    sl.Children.Add(commenter);
-                    layout.Children.Add(sl);
+
+                StackLayout sl3 = new StackLayout();
+                sl3.Orientation = StackOrientation.Vertical;
+                sl3.WidthRequest = 50;
+                sl3.Children.Add(imag);
+                sl3.Children.Add(username);
+                sl.Children.Add(sl3);
+                sl.Children.Add(commenter);
+
+
+                abc2.Content = sl;
+
+                    layout.Children.Add(abc2);
             }
 
 
@@ -76,9 +117,9 @@ namespace App3.Views
             layout2.Children.Add(layout1);
 
             Content = layout2;
-            var abc = new Label { HeightRequest = 0, BackgroundColor = Color.Transparent };
-            layout.Children.Add(abc);
-            view.ScrollToAsync(abc, ScrollToPosition.End, false);
+            var abc3 = new Label { HeightRequest = 0, BackgroundColor = Color.Transparent };
+            layout.Children.Add(abc3);
+            view.ScrollToAsync(abc3, ScrollToPosition.End, false);
 
         }
 
@@ -95,14 +136,33 @@ namespace App3.Views
             if (msgent.Text != "" && msgent.Text != null)
             {
                 CurrentFeed.AddComment(CurrentFeed, new Comment(Constants.user, msgent.Text));
-                Label username = new Label { Text = Constants.user.Username, FontSize = 14 };
-                Label commenter = new Label { Text = msgent.Text, FontSize = 12 };
+                Frame abc2 = new Frame
+                {
+                    IsClippedToBounds = true,
+                    HasShadow = true,
+                    BackgroundColor = Color.White,
+                    OutlineColor = Color.Gray,
+                    Margin = new Thickness(7),
+                    Padding = new Thickness(5)
+                };
+                Image imag = new Image { Source = Constants.user.ProfileImage, WidthRequest = 40, HeightRequest = 40 };
+                Label username = new Label { Text = Constants.user.Username, HorizontalOptions = LayoutOptions.Center, FontSize = 10 };
+                Label commenter = new Label { Text = msgent.Text, FontSize = 18, VerticalOptions = LayoutOptions.Center };
                 StackLayout sl = new StackLayout();
                 sl.Orientation = StackOrientation.Horizontal;
-                sl.Children.Add(username);
+
+                StackLayout sl3 = new StackLayout();
+                sl3.Orientation = StackOrientation.Vertical;
+                sl3.WidthRequest = 50;
+                sl3.Children.Add(imag);
+                sl3.Children.Add(username);
+                sl.Children.Add(sl3);
                 sl.Children.Add(commenter);
-                layout.Children.Add(sl);
-                view.ScrollToAsync(sl, ScrollToPosition.End, true);
+
+
+                abc2.Content = sl;
+                layout.Children.Add(abc2);
+                view.ScrollToAsync(abc2, ScrollToPosition.End, true);
                 msgent.Text = string.Empty;
             }
 

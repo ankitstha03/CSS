@@ -84,7 +84,7 @@ namespace App3.Views
 
                 if (Constants.user.CheckInformation(GetUsers()))
                 {
-<<<<<<< HEAD
+
                     Constants.user = Constants._users.SingleOrDefault(x => x.Username == enUser.Text);
                     Application.Current.MainPage = new NavigationPage(new Page1());
 

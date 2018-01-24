@@ -18,11 +18,7 @@ namespace App3
         public MainCarouselPage()
         {
             InitializeComponent();
-            WebView _animatedLogoView = new WebView
-            {
-                Source = "http://xamarin.com"
-            };
-            first.Children.Add(_animatedLogoView);
+ 
         }
 
         protected override void OnAppearing()
@@ -38,14 +34,5 @@ namespace App3
             Application.Current.MainPage = new NavigationPage(new MainPage());
         }
 
-        private void Browser_Navigated(object sender, WebNavigatedEventArgs e)
-        {
-            LoadingLabel.IsVisible = false;
-        }
-
-        private void Browser_Navigating(object sender, WebNavigatingEventArgs e)
-        {
-            LoadingLabel.IsVisible = true;
-        }
     }
 }

@@ -11,7 +11,7 @@
         Text="Loading..."
         HorizontalOptions="Center"
         IsVisible="false" />
-                <WebView x:Name="Browser"  WidthRequest="1000" Source="http://www.google.com" Navigated="Browser_Navigated" Navigating="Browser_Navigating"/>
+                <WebView x:Name="Browser"  WidthRequest="1000" Source="http://www.google.com" />
 
             </StackLayout>
         </ContentPage.Content>

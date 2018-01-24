@@ -30,33 +30,51 @@ namespace App3
         public feedPage2 ()
 		{
 			InitializeComponent ();
-            foreach(Feed feed in Constants._feed) {
+            foreach(Feed feed in Constants._feed.Reverse<Feed>()) {
+
+                Frame abc = new Frame
+                {
+                    IsClippedToBounds = true,
+                    HasShadow = true,
+                    BackgroundColor = Color.White,
+                    OutlineColor = Color.Gray,
+                    Margin = new Thickness(7),
+                    Padding = new Thickness(5)
+                };
+                var tapGestureRecognizer = new TapGestureRecognizer();
+                tapGestureRecognizer.Tapped += async (s, e) => {
+                    await Navigation.PushAsync(new CommentPage(feed.Id));
+
+                };
+
+                abc.GestureRecognizers.Add(tapGestureRecognizer);
+
                 StackLayout layout = new StackLayout();
                 layout.Children.Add(new Label { HeightRequest = 0, BackgroundColor = Color.Transparent, TextColor = Color.White, HorizontalOptions = LayoutOptions.FillAndExpand });
                 layout.Children.Add(new Label { Text = feed.Title });
-                foreach (Comment comment in feed.Comments)
-                {
+                
+                
 
-                    Label username = new Label { Text = comment.Currentusr.Username, FontSize = 14 };
-                    Label commenter = new Label { Text = comment.Text, FontSize = 12 };
+                    Label commcount = new Label { Text = feed.Comments.Count.ToString()+" comments" };
                     StackLayout sl = new StackLayout
                     {
                         Orientation = StackOrientation.Horizontal
                     };
-                    sl.Children.Add(username);
-                    sl.Children.Add(commenter);
+                    sl.Children.Add(commcount);
                     layout.Children.Add(sl);
-                }
+                
                 Button commentButton = new Button { Text = "Comment", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
                 commentButton.Clicked += async (sender, e) =>
                 {
                     await Navigation.PushAsync(new CommentPage(feed.Id));
                 };
                 layout.Children.Add(commentButton);
-                layout_main.Children.Add(layout);
-                view.Content = layout_main;
+                abc.Content = layout;
+                layout_main.Children.Add(abc);
             }
-            Content = layout_main;
+            view.Content = layout_main;
+
+            Content = view;
 		}
     }
 }

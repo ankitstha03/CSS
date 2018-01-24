@@ -5,31 +5,36 @@
             >
     <ContentPage BackgroundColor="White">
         <ContentPage.Content>
+          
+            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" Orientation="Vertical">
+                   
+                    <StackLayout >
+                    <WebView x:Name="Browser"  WidthRequest="400" HeightRequest="300" HorizontalOptions="Fill" VerticalOptions="Fill" Source="https://cdn.dribbble.com/users/2096720/screenshots/4140730/ezgif-4-df2ad8b8fa.gif"/>
+                <Label Text="Welcome to CSS App" TextColor="DodgerBlue" FontSize="30" HorizontalTextAlignment="Center"/>
+                    </StackLayout>
+                <Label VerticalOptions="FillAndExpand" Text="bla" FontSize="100" TextColor="White"  />
+                <Label VerticalOptions="End" HorizontalTextAlignment="Center" Text="Swipe" TextColor="DodgerBlue" FontSize="20"/>
+            </StackLayout>
+          
+        </ContentPage.Content>
+    </ContentPage>
 
+    <ContentPage BackgroundColor="White">
+        <ContentPage.Content>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-                <Label x:Name="LoadingLabel"
-        Text="Loading..."
-        HorizontalOptions="Center"
-        IsVisible="false" />
-                <WebView x:Name="Browser"  WidthRequest="1000" Source="http://www.google.com" />
 
+                <WebView x:Name="Browser1"  WidthRequest="400" HeightRequest="400" HorizontalOptions="Fill" VerticalOptions="Fill" Source="https://cdn.dribbble.com/users/2096720/screenshots/4140854/ezgif-4-03738da3ed.gif" />
+                <Label Text="Responsive Customer Care" TextColor="DodgerBlue"  HorizontalTextAlignment="Center" FontSize="30"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>
 
-    <ContentPage BackgroundColor="LightYellow">
+    <ContentPage BackgroundColor="#08615e">
         <ContentPage.Content>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-                <Label Text="i am page 2"/>
-            </StackLayout>
-        </ContentPage.Content>
-    </ContentPage>
+                <WebView x:Name="Browser2"  WidthRequest="400" HeightRequest="300" HorizontalOptions="Fill" VerticalOptions="Fill" Source="https://i.pinimg.com/originals/ef/d5/f6/efd5f625c6523e9627aab47361602de1.gif" />
 
-    <ContentPage BackgroundColor="Black">
-        <ContentPage.Content>
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-                <Label Text="i am page 3"/>
-                <Button Text="Continue" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="End" Clicked="Button_Clicked"/>
+                <Button Text="Get Started" BackgroundColor="#3897F0" TextColor="White" HeightRequest="50" VerticalOptions="End" Clicked="Button_Clicked"/>
             </StackLayout>
         </ContentPage.Content>
     </ContentPage>

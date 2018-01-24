@@ -136,6 +136,9 @@
   <ItemGroup>
     <BundleResource Include="Resources\profile.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\asd.gif" />
+  </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\iOS\Xamarin.iOS.CSharp.targets" />
   <Import Project="..\App3\App3.projitems" Label="Shared" />
 </Project>

@@ -5,8 +5,7 @@
             >
     <ContentPage BackgroundColor="White">
         <ContentPage.Content>
-            <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
-
+            <StackLayout x:Name="first" HorizontalOptions="Center" VerticalOptions="Center" >
 
                
             </StackLayout>

@@ -18,6 +18,11 @@ namespace App3
         public MainCarouselPage()
         {
             InitializeComponent();
+            WebView _animatedLogoView = new WebView
+            {
+                Source = "http://xamarin.com"
+            };
+            first.Children.Add(_animatedLogoView);
         }
 
         protected override void OnAppearing()

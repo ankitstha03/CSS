@@ -20,7 +20,7 @@ namespace App3
 		{
 			InitializeComponent();
             if (Nsession == "0")
-                MainPage = new NavigationPage(new MainCarouselPage());
+                MainPage = new MainCarouselPage();
             else
                 MainPage = new NavigationPage(new MainPage());
         }

@@ -23,7 +23,7 @@
         <ContentPage.Content>
             <StackLayout HorizontalOptions="Center" VerticalOptions="Center" >
 
-                <WebView x:Name="Browser1"  WidthRequest="400" HeightRequest="400" HorizontalOptions="Fill" VerticalOptions="Fill" Source="https://cdn.dribbble.com/users/2096720/screenshots/4140854/ezgif-4-03738da3ed.gif" />
+                <WebView x:Name="Browser1"  WidthRequest="400" HeightRequest="300" HorizontalOptions="Fill" VerticalOptions="Fill" Source="https://cdn.dribbble.com/users/2096720/screenshots/4140854/ezgif-4-03738da3ed.gif" />
                 <Label Text="Responsive Customer Care" TextColor="DodgerBlue"  HorizontalTextAlignment="Center" FontSize="30"/>
             </StackLayout>
         </ContentPage.Content>

@@ -21,12 +21,7 @@ namespace App3
  
         }
 
-        protected override void OnAppearing()
-        {
-            base.OnAppearing();
-            ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
-            
-        }
+   
 
         private void Button_Clicked(object sender, EventArgs e)
         {

@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8" ?>
+<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Profile">
@@ -22,15 +22,16 @@
                 <Label x:Name="usern" AbsoluteLayout.LayoutBounds="0.5,200,10,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" TextColor="Black" HorizontalTextAlignment="Center" FontSize="Medium"/>
                 <AbsoluteLayout AbsoluteLayout.LayoutBounds="0,0,1,1" AbsoluteLayout.LayoutFlags="All" Padding="5">
 
-                    <AbsoluteLayout x:Name="iconlayout" BackgroundColor="#9eacc1" AbsoluteLayout.LayoutBounds=".5,235,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
+                    <AbsoluteLayout x:Name="iconlayout" BackgroundColor="White" AbsoluteLayout.LayoutBounds=".5,235,1,40" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
 
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="60,5,30,30"/>
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="100,5,30,30"/>
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="140,5,30,30"/>
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="180,5,30,30"/>
-                        <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="220,5,30,30"/>
+
+                        <BoxView BackgroundColor="#9eacc1"  AbsoluteLayout.LayoutBounds="140,5,30,30"/>
+                        <BoxView BackgroundColor="#9eacc1" AbsoluteLayout.LayoutBounds="180,5,30,30"/>
+                        <BoxView BackgroundColor="#9eacc1" AbsoluteLayout.LayoutBounds="220,5,30,30"/>
+                        <BoxView BackgroundColor="#9eacc1" AbsoluteLayout.LayoutBounds="260,5,30,30"/>
+                        <BoxView BackgroundColor="#9eacc1" AbsoluteLayout.LayoutBounds="300,5,30,30"/>
                     </AbsoluteLayout>
-                     <AbsoluteLayout Padding="10,10,10,10" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,290,1,220" AbsoluteLayout.LayoutFlags="WidthProportional">
+                    <AbsoluteLayout Padding="10,10,10,10" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,290,1,220" AbsoluteLayout.LayoutFlags="WidthProportional">
                         <Label  Text="Full Name" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,5,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Entry x:Name="lbluser" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata1" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,10,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Label  Text="Organization" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,60,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
@@ -45,6 +46,8 @@
 
                     </AbsoluteLayout>
                     <AbsoluteLayout BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,550,1,200" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
+
+                    </AbsoluteLayout>
 
 
 

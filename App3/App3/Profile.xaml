@@ -30,20 +30,21 @@
                         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="180,5,30,30"/>
                         <BoxView BackgroundColor="White" AbsoluteLayout.LayoutBounds="220,5,30,30"/>
                     </AbsoluteLayout>
-                    <AbsoluteLayout Padding="10,10,10,10" BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,290,1,140" AbsoluteLayout.LayoutFlags="WidthProportional">
-
-                        <Entry x:Name="lbluser" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata1" TextColor="#7095d1" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0,5,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Entry x:Name="lblname" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata2" TextColor="#7095d1" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0,30,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Entry x:Name="lbladdress" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata3" TextColor="#7095d1" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0,55,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Entry x:Name="lblphn" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata4" TextColor="#7095d1" FontAttributes="Bold" AbsoluteLayout.LayoutBounds="0,80,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-
-                    </AbsoluteLayout>
-                    <AbsoluteLayout BackgroundColor="#bcc5d3" AbsoluteLayout.LayoutBounds="0,450,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" >
-
-                    </AbsoluteLayout>
-                    <AbsoluteLayout BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,500,1,200" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
+                     <AbsoluteLayout Padding="10,10,10,10" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,290,1,220" AbsoluteLayout.LayoutFlags="WidthProportional">
+                        <Label  Text="Full Name" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,5,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lbluser" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata1" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,10,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Label  Text="Organization" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,60,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lblname" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata2" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,65,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Label  Text="Address" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,115,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lbladdress" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata3" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,120,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Label  Text="Phone Number" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,170,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lblphn" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata4" TextColor="#7095d1" AbsoluteLayout.LayoutBounds="0,175,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
 
                     </AbsoluteLayout>
+                    <AbsoluteLayout BackgroundColor="#bcc5d3" AbsoluteLayout.LayoutBounds="0,600,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" >
+
+                    </AbsoluteLayout>
+                    <AbsoluteLayout BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,550,1,200" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
 
 
 

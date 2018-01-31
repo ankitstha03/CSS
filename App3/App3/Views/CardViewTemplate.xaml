@@ -50,7 +50,7 @@
                                 Padding = "15, 5, 15, 5"
                                 HorizontalOptions = "Start"
                                 VerticalOptions = "Fill"
-                                BackgroundColor = "Aqua">
+                                BackgroundColor = "#4caf50">
 
 
                                 <Label FontAttributes="None"
@@ -59,7 +59,7 @@
                                VerticalTextAlignment="Start"
                                HorizontalOptions="StartAndExpand"
                                FontSize="16"
-                               Text="{Binding Category, Mode = TwoWay}" TextColor="Black">
+                               Text="{Binding Category, Mode = TwoWay}" TextColor="White">
 
                             </Label>
                             </Frame>
@@ -68,14 +68,14 @@
                                 Padding = "15, 5, 15, 5"
                                 HorizontalOptions = "End"
                                 VerticalOptions = "Fill"
-                                BackgroundColor = "ForestGreen">
+                                BackgroundColor = "#009688">
                                 <Label FontAttributes="None"
                                Grid.Row="0"
                                HorizontalTextAlignment="End"
                                VerticalTextAlignment="Center"
                                HorizontalOptions="End"
                                FontSize="16"
-                               Text="{Binding Status, Mode = TwoWay}" TextColor="Black">
+                               Text="{Binding Status, Mode = TwoWay}" TextColor="White">
 
                                 </Label>
                             </Frame>

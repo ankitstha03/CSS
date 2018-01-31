@@ -114,7 +114,7 @@ namespace App3
                 Label commcount = new Label { Text = asd + " comments" };
                 layout.Children.Add(commcount);
 
-                Button commentButton = new Button { Text = "Comment", HeightRequest = 50, BackgroundColor=Color.FromHex(app.DefColor), VerticalOptions = LayoutOptions.End };
+                Button commentButton = new Button { Text = "Comment", HeightRequest = 50, TextColor=Color.White, BackgroundColor=Color.FromHex(app.DefColor), VerticalOptions = LayoutOptions.End };
                 commentButton.Clicked += async (sender, e) =>
                 {
                     await Navigation.PushAsync(new CommentPage(feed.Id));

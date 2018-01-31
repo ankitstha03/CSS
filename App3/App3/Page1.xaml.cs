@@ -92,8 +92,8 @@ namespace App3
             abc = new CardDataViewModel();
             listView.ItemsSource = abc.GetCard().Reverse<Ticket>();
             Icon.Icon = Constants.user.ProfileImage;
-            listView.Margin = new Thickness(-200,0,200,0);
-            listView.TranslateTo(200, 0, 1000, Easing.SpringIn);
+            view.Margin = new Thickness(-200,0,200,0);
+            view.TranslateTo(200, 0, 1000, Easing.SpringIn);
             newticket.Opacity = 0;
             newticket.FadeTo(1, 1000,Easing.SpringIn);
             listView.Opacity = 0;

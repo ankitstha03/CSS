@@ -33,7 +33,8 @@ namespace App3
         {
             base.OnAppearing();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
-
+            view.Opacity = 0;
+            view.FadeTo(1, 1000, Easing.SpringIn);
         }
 
         private void Onactivated(object sender, EventArgs e)

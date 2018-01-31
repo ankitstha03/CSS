@@ -56,7 +56,7 @@ namespace App3
             layout_main2.Children.Clear();
 
 
-            Button btnpost = new Button { Text = "Post", BackgroundColor=Color.FromHex(app.DefColor), TextColor = Color.White, HeightRequest = 30, HorizontalOptions = LayoutOptions.End };
+            Button btnpost = new Button { Text = "Post", BackgroundColor=Color.FromHex(app.DefColor), TextColor = Color.White, HeightRequest = 50, HorizontalOptions = LayoutOptions.End };
             btnpost.Clicked += new EventHandler(Button_Clicked);
 
             Frame abcs = new Frame

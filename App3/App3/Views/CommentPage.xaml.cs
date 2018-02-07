@@ -17,7 +17,7 @@ namespace App3.Views
         Feed CurrentFeed = new Feed();
         int id2;
         Entry msgent = new Entry { Placeholder = "Write a Comment", HeightRequest = 50, HorizontalOptions = LayoutOptions.FillAndExpand, FontSize = 16 };
-        Button senbutton = new Button { Text = "Send", HeightRequest = 50, VerticalOptions = LayoutOptions.End };
+        Button senbutton = new Button { Text = "Send", HeightRequest = 50, TextColor=Color.White, VerticalOptions = LayoutOptions.End };
 
         StackLayout layout = new StackLayout
         {

@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using App3.Models;
 using App3.ViewModel;
-
+using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,6 +15,8 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        private const string Url = "http://support.prixa.net/api-auth/tickets/?format=json";
+        private HttpClient _client = new HttpClient();
         private bool _canClose = true;
 
         App app = Application.Current as App;
@@ -78,21 +81,22 @@ namespace App3.Views
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
             if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
-                Constants.user = new User(enUser.Text, enPass.Text);
-
-                if (Constants.user.CheckInformation(GetUsers()))
+                Constants.user = new User(enUser.Text,"", enPass.Text);
+                var newuser=JsonConvert.SerializeObject(Constants.user);
+                HttpResponseMessage response = await _client.PostAsync(Url, new StringContent(newuser));
+                if ((int)response.StatusCode>=200 && (int)response.StatusCode <= 299)
                 {
 
-                    Constants.user = Constants._users.SingleOrDefault(x => x.Username == enUser.Text);
+                    Constants.user = Constants._users.SingleOrDefault(x => x.username == enUser.Text);
                     Application.Current.MainPage = new NavigationPage(new Page1());
 
                 }
                 else
-                    DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
+                    DisplayAlert("Login Failed", response.StatusCode.ToString(), "Ok");
 
             }
             else

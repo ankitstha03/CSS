@@ -97,7 +97,7 @@ namespace App3
             base.OnAppearing();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
             //newticket.BackgroundColor = Color.FromHex(app.DefColor);
-            //abc = new CardDataViewModel();
+            //abc = new CardDataViewModel(); 
             var content = await _client.GetStringAsync(Url);
             tickets = JsonConvert.DeserializeObject<List<Ticket>>(content);
             ObservableCollection<Ticket> CardDataCollection = new ObservableCollection<Ticket>(tickets);

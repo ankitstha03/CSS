@@ -14,6 +14,8 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+        private bool _canClose = true;
+
         App app = Application.Current as App;
 
         public MainPage()
@@ -96,10 +98,30 @@ namespace App3.Views
             else
                 DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
 
+
         }
 
 
 
+        protected override bool OnBackButtonPressed()
+        {
+            if (_canClose)
+            {
+                ShowExitDialog();
+            }
+            return _canClose;
+        }
+
+        private async void ShowExitDialog()
+        {
+            var answer = await DisplayAlert("Exit", "Do you wan't to exit the App?", "Yes", "No");
+            if (answer)
+            {
+                _canClose = false;
+                this.OnBackButtonPressed();
+                
+            }
+        }
 
 
         private void Onactivated(object sender, EventArgs e)

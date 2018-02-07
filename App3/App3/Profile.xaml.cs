@@ -14,6 +14,8 @@ namespace App3
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Profile : ContentPage
 	{
+        private bool _canClose = true;
+
         App app = Application.Current as App;
 
         public Profile ()
@@ -84,6 +86,26 @@ namespace App3
         {
             Application.Current.MainPage = new NavigationPage(new MainPage());
 
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (_canClose)
+            {
+                ShowExitDialog();
+            }
+            return _canClose;
+        }
+
+        private async void ShowExitDialog()
+        {
+            var answer = await DisplayAlert("Exit", "Do you wan't to exit the App?", "Yes", "No");
+            if (answer)
+            {
+                _canClose = false;
+                this.OnBackButtonPressed();
+
+            }
         }
     }
 }

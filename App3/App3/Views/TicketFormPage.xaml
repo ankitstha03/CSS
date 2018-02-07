@@ -3,7 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="App3.Views.TicketFormPage"
              Title="Send a new ticket" 
-             BackgroundColor="#2E55B2">
+             >
     <ContentPage.Padding>
         <OnPlatform x:TypeArguments="Thickness">
             <OnPlatform.iOS>
@@ -31,10 +31,11 @@
 
     <ContentPage.Content>
 
-        <StackLayout Margin="20,0,20,0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
-            <WebView x:Name="Browser2"  WidthRequest="400" HeightRequest="300" HorizontalOptions="Center"  Source="https://cdn.dribbble.com/users/2096720/screenshots/4168616/ezgif-4-c2c870ae79.gif" />
-
-            <Picker x:Name="categ" TextColor="White" Title="Select Category" HeightRequest="50" HorizontalOptions="FillAndExpand" >
+        <StackLayout Margin="0,0,0,0" Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="FillAndExpand" >
+            <StackLayout HeightRequest="300" BackgroundColor="#2E55B2">
+                <WebView x:Name="Browser2"  WidthRequest="400" HeightRequest="300" HorizontalOptions="Center"  Source="https://cdn.dribbble.com/users/2096720/screenshots/4168616/ezgif-4-c2c870ae79.gif" />
+            </StackLayout>
+            <Picker x:Name="categ" Title="Select Category" HeightRequest="50" HorizontalOptions="FillAndExpand" >
                     <Picker.Items>
                         <x:String>Category1</x:String>
                         <x:String>Category2</x:String>
@@ -44,8 +45,8 @@
                     </Picker.Items>
                 </Picker>
 
-                <Entry  x:Name="entsub" TextColor="White" HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Subject of your ticket"  FontSize="16"/>
-            <Entry  x:Name="entmsg" TextColor="White" HorizontalOptions="FillAndExpand" Placeholder="Message of the ticket" HeightRequest="50"  FontSize="16"/>
+                <Entry  x:Name="entsub" HorizontalOptions="FillAndExpand" HeightRequest="50" Placeholder="Subject of your ticket"  FontSize="16"/>
+                <Entry  x:Name="entmsg" HorizontalOptions="FillAndExpand" Placeholder="Message of the ticket" HeightRequest="50"  FontSize="16"/>
                 <Button Text="Send Ticket" HorizontalOptions="FillAndExpand" x:Name="btntick" TextColor="White" HeightRequest="50"   Clicked="Button_Clicked"/>
                     
         </StackLayout>

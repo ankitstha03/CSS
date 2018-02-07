@@ -19,10 +19,11 @@ namespace App3
         public App ()
 		{
 			InitializeComponent();
-            if (Nsession == "0")
-                MainPage = new MainCarouselPage();
-            else
-                MainPage = new NavigationPage(new MainPage());
+             MainPage = new NavigationPage(new Page1());
+            //if (Nsession == "0")
+            //    MainPage = new MainCarouselPage();
+            //else
+            //    MainPage = new NavigationPage(new MainPage());
         }
 
         protected override void OnStart()

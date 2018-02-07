@@ -14,6 +14,7 @@ namespace App3
     public partial class MainCarouselPage : CarouselPage
     {
         App app = Application.Current as App;
+        private bool _canClose = true;
 
         public MainCarouselPage()
         {
@@ -27,6 +28,26 @@ namespace App3
         {
             app.Nsession = "1";
             Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
+
+        protected override bool OnBackButtonPressed()
+        {
+            if (_canClose)
+            {
+                ShowExitDialog();
+
+            }
+            return _canClose;
+        }
+
+        private async void ShowExitDialog()
+        {
+            var answer = await DisplayAlert("Exit", "Do you wan't to exit the App?", "Yes", "No");
+            if (answer)
+            {
+                _canClose = false;
+                OnBackButtonPressed();
+            }
         }
 
     }

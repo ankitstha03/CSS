@@ -42,8 +42,16 @@
                            VerticalTextAlignment="Center"
                            HorizontalOptions="StartAndExpand"
                            FontSize="20"
-                           Text="{Binding Title , Mode = TwoWay}" TextColor="Gray" >
-                        </Label>        
+                           Text="{Binding subject , Mode = TwoWay}" TextColor="Gray" >
+                        </Label>
+                        <Label FontAttributes="None"
+                           Grid.Row="0"
+                           HorizontalTextAlignment="Start"
+                           VerticalTextAlignment="Center"
+                           HorizontalOptions="StartAndExpand"
+                           FontSize="16"
+                           Text="{Binding message , Mode = TwoWay}" TextColor="Gray" >
+                        </Label>
                         <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
                             <Frame CornerRadius = "12"
                                 OutlineColor = "Transparent"
@@ -59,7 +67,7 @@
                                VerticalTextAlignment="Start"
                                HorizontalOptions="StartAndExpand"
                                FontSize="16"
-                               Text="{Binding Category, Mode = TwoWay}" TextColor="White">
+                               Text="{Binding resolved_on, Mode = TwoWay}" TextColor="White">
 
                             </Label>
                             </Frame>
@@ -75,7 +83,7 @@
                                VerticalTextAlignment="Center"
                                HorizontalOptions="End"
                                FontSize="16"
-                               Text="{Binding Status, Mode = TwoWay}" TextColor="White">
+                               Text="{Binding status, Mode = TwoWay}" TextColor="White">
 
                                 </Label>
                             </Frame>
@@ -95,14 +103,19 @@
                         <ColumnDefinition Width="Auto" />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <Label Grid.Row="0"
-                 Grid.Column="0"
-                 />
-                    <Label Grid.Row="0"
+                    <StackLayout Orientation="Horizontal" VerticalOptions="Start" >
+
+
+
+                        <Label Grid.Row="1"
                  Grid.Column="0"
 
-                 Text="Employee name here" HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontSize="14"/>
+                Text="Assigned to: " HorizontalOptions="Start" VerticalOptions="Start" FontSize="14"/>
+                        <Label Grid.Row="1"
+                 Grid.Column="0"
 
+                 x:Name="assigned" HorizontalOptions="EndAndExpand" VerticalOptions="Start" FontSize="14"/>
+                    </StackLayout>
                 </Grid>
 
             </Grid>

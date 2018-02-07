@@ -15,7 +15,7 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        private const string Url = "http://support.prixa.net/api-auth/tickets/?format=json";
+        private const string Url = "http://support.prixa.net/api-auth/login/";
         private HttpClient _client = new HttpClient();
         private bool _canClose = true;
 
@@ -85,22 +85,14 @@ namespace App3.Views
         {
             if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
             {
-                Constants.user = new User(enUser.Text,"", enPass.Text);
+                Constants.user = new User(enUser.Text,"", new Passwo(enPass.Text));
                 var newuser=JsonConvert.SerializeObject(Constants.user);
-                HttpResponseMessage response = await _client.PostAsync(Url, new StringContent(newuser));
-                if ((int)response.StatusCode>=200 && (int)response.StatusCode <= 299)
-                {
-
-                    Constants.user = Constants._users.SingleOrDefault(x => x.username == enUser.Text);
-                    Application.Current.MainPage = new NavigationPage(new Page1());
-
-                }
-                else
-                    DisplayAlert("Login Failed", response.StatusCode.ToString(), "Ok");
+                HttpResponseMessage response = await _client.PostAsync(Url, new StringContent(newuser, Encoding.UTF32, "application/json"));
+                    await DisplayAlert("Login Failed", response.StatusCode.ToString(), "Ok");
 
             }
             else
-                DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
+                await DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
 
 
         }

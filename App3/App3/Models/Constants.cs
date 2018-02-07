@@ -120,8 +120,8 @@ namespace App3.Models
 
         public static List<User> _users = new List<User>()
            {
-               new User ("User1", "pass1","ankit"),
-               new User ("User2", "pass2","ankit")
+               new User ("User1", "pass1",new Passwo("ankit")),
+               new User ("User2", "pass2",new Passwo("ankit"))
 
            };
 

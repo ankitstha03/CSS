@@ -19,8 +19,13 @@
       <DependentUpon>MainCarouselPage.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Chat.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Customer.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Employee.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Message.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Passwo.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Project.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)Models\Staff.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Ticket.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Profile.xaml.cs">
       <DependentUpon>Profile.xaml</DependentUpon>
@@ -32,13 +37,13 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Feed.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommentPage.xaml.cs">
       <DependentUpon>CommentPage.xaml</DependentUpon>
       <SubType>Code</SubType>

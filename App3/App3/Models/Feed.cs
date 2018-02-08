@@ -6,26 +6,27 @@ namespace App3.Models
 {
     class Feed
     {
-        public int Id { get; set; }
-        public User Currentusr { get; set; }
-        public string Title { get; set; }
-        public List<Comment> Comments { get; set; }
+        public string title { get; set; }
+        public Ticket ticket { get; set; }
+        public string created_by { get; set; }
+        public string access { get; set; }
 
 
-        public Feed() { }
-        public Feed(int id, User usr, string title, List<Comment> comment)
-        {
-            this.Id = id;
-            this.Currentusr = usr;
-            this.Title = title;
-            this.Comments = comment;
-        }
 
-        public Feed AddComment(Feed feed, Comment comment)
-        {
-            feed.Comments.Add(comment);
-            return feed;
-        }
+        //public Feed() { }
+        //public Feed(int id, User usr, string title, List<Comment> comment)
+        //{
+        //    this.Id = id;
+        //    this.Currentusr = usr;
+        //    this.Title = title;
+        //    this.Comments = comment;
+        //}
+
+        //public Feed AddComment(Feed feed, Comment comment)
+        //{
+        //    feed.Comments.Add(comment);
+        //    return feed;
+        //}
 
     }
 }

@@ -4,58 +4,55 @@ using System.Text;
 
 namespace App3.Models
 {
-    public class User
+    class User
     {
-        private int Id { get; set; }
-        public string Username { get; set; }
-        public string Name { get; set; }
-        private string Password { get; set; }
-        public string ProfileImage { get; set; }
+        public string username { get; set; }
+        public string email { get; set; }
+        public Passwo password { get; set; }
 
         public User() { }
 
-        public User(string Username, string Password, string Name="", string imag = "profile.png")
+        public User(string username, string email, Passwo password)
         {
-            this.Name = Name;
-            this.Username = Username;
-            this.Password = Password;
-            this.ProfileImage = imag;
+            this.email = email;
+            this.username = username;
+            this.password = password;
         }
 
 
-        public bool CheckInformation(List<User> Userlist)
-        {
-            if (Userlist.Count!=0)
-            {
+        //public bool CheckInformation(List<User> Userlist)
+        //{
+        //    if (Userlist.Count!=0)
+        //    {
                 
-                    foreach (User item in Userlist)
-                    {
-                        if (this.Username.Equals(item.Username) && this.Password.Equals(item.Password))
-                            return true;
-                    }
+        //            foreach (User item in Userlist)
+        //            {
+        //                if (this.Username.Equals(item.Username) && this.Password.Equals(item.Password))
+        //                    return true;
+        //            }
              
-            }
+        //    }
 
-            return false;
+        //    return false;
 
-        }
+        //}
 
-        public bool CheckUsername(List<User> Userlist)
-        {
-            if (Userlist.Count != 0)
-            {
+        //public bool CheckUsername(List<User> Userlist)
+        //{
+        //    if (Userlist.Count != 0)
+        //    {
 
-                foreach (User item in Userlist)
-                {
-                    if (this.Username.Equals(item.Username))
-                        return true;
-                }
+        //        foreach (User item in Userlist)
+        //        {
+        //            if (this.username.Equals(item.username))
+        //                return true;
+        //        }
 
-            }
+        //    }
 
-            return false;
+        //    return false;
 
-        }
+        //}
 
      
     }

@@ -17,7 +17,8 @@ namespace App3.Views
 		{
 			InitializeComponent ();
 
-            imags.Source = Constants.user.ProfileImage;
+            imags.SetBinding(Image.SourceProperty, "customer.profile_picture");
+            assigned.SetBinding(Label.TextProperty, "escalate_to.username");
 		}
 
         }

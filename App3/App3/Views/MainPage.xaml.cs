@@ -1,11 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using App3.Models;
 using App3.ViewModel;
-
+using Newtonsoft.Json;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -14,6 +15,11 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
+
+        private const string Url = "http://support.prixa.net/api-auth/customers/";
+        private HttpClient _client = new HttpClient();
+        private bool _canClose = true;
+
         App app = Application.Current as App;
 
         public MainPage()
@@ -76,30 +82,59 @@ namespace App3.Views
 
         }
 
-        private void Button_Clicked(object sender, EventArgs e)
+        private async void Button_Clicked(object sender, EventArgs e)
         {
-            if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
+             using (var cl = new HttpClient())
             {
-                Constants.user = new User(enUser.Text, enPass.Text);
-
-                if (Constants.user.CheckInformation(GetUsers()))
+                var formcontent = new FormUrlEncodedContent(new[]
                 {
+                        new KeyValuePair<string,string>("username",enUser.Text),
+                        new KeyValuePair<string, string>("password",enPass.Text)
+                    });
 
-                    Constants.user = Constants._users.SingleOrDefault(x => x.Username == enUser.Text);
+
+                var request = await cl.PostAsync("http://support.prixa.net/api-auth/login/", formcontent);
+
+                if ((int)request.StatusCode == 200)
+                {
+                    var content = await _client.GetStringAsync(Url);
+                    Constants.currentcustomer = JsonConvert.DeserializeObject<List<Customer>>(content).SingleOrDefault(x => x.username == enUser.Text); ;
                     Application.Current.MainPage = new NavigationPage(new Page1());
-
                 }
                 else
-                    DisplayAlert("Login Failed", "The Username Or Password is Incorrect", "Ok");
+                {
+                    await DisplayAlert("Error", "Your password or username is incorrect", "OK");
+                }
+
+
+                
 
             }
-            else
-                DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
+
 
         }
 
 
 
+        protected override bool OnBackButtonPressed()
+        {
+            if (_canClose)
+            {
+                ShowExitDialog();
+            }
+            return _canClose;
+        }
+
+        private async void ShowExitDialog()
+        {
+            var answer = await DisplayAlert("Exit", "Do you wan't to exit the App?", "Yes", "No");
+            if (answer)
+            {
+                _canClose = false;
+                this.OnBackButtonPressed();
+                
+            }
+        }
 
 
         private void Onactivated(object sender, EventArgs e)

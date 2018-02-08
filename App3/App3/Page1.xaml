@@ -10,15 +10,16 @@
         <viewModel:CardDataViewModel/>
     </ContentPage.BindingContext>
 
-    <!--<ContentPage.ToolbarItems>
+    <ContentPage.ToolbarItems>
         <ToolbarItem x:Name="Icon"  Clicked="Icon_Clicked"/>
-        <ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
+
+        <!--<ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
         <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
-        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
+        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>-->
         <ToolbarItem x:Name="Logout" Text="Sign Out" Order="Secondary" Activated="Onlogout"/>
 
-    </ContentPage.ToolbarItems>-->
+    </ContentPage.ToolbarItems>
 
 
     <ContentPage.Content>
@@ -28,10 +29,10 @@
             
                
 
-                    <!--<SearchBar x:Name="searbar" HeightRequest="40" HorizontalOptions="FillAndExpand" Placeholder="Search..." TextChanged="Onchange">
+                    <SearchBar x:Name="searbar" HeightRequest="40" HorizontalOptions="FillAndExpand" Placeholder="Search..." TextChanged="Onchange">
 
 
-                    </SearchBar>-->
+                    </SearchBar>
 
                     <!--<Button Text="Send us a ticket" HeightRequest="40" x:Name="newticket" TextColor="White"  VerticalOptions="Start" Clicked="Ticket_Add"/>-->
             <ScrollView x:Name="view" VerticalOptions="FillAndExpand">

@@ -37,13 +37,13 @@
     </Compile>
     <Compile Include="$(MSBuildThisFileDirectory)Models\Comment.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Feed.cs" />
-    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\Constants.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Models\User.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Page2.xaml.cs">
       <DependentUpon>Page2.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="$(MSBuildThisFileDirectory)ViewModel\CardDataViewModel.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)Views\CommentPage.xaml.cs">
       <DependentUpon>CommentPage.xaml</DependentUpon>
       <SubType>Code</SubType>

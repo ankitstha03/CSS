@@ -18,13 +18,13 @@ namespace App3
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Page1 : ContentPage
     {
+        ObservableCollection<Ticket> CardDataCollection;
         private const string Url = "http://support.prixa.net/api-auth/tickets/?format=json";
         private HttpClient _client = new HttpClient();
         List<Ticket> tickets;
         private bool _canClose = true;
 
         App app = Application.Current as App;
-        //CardDataViewModel abc = new CardDataViewModel();
 
 
         public Page1()
@@ -50,22 +50,33 @@ namespace App3
             Navigation.PushAsync(new SettingPage(),true);
         }
 
-        //private void Icon_Clicked(object sender, EventArgs e)
-        //{
-        //    Application.Current.MainPage = new NavigationPage(new Profile());
+        private void Icon_Clicked(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new Profile());
 
 
-        //}
-        //private void Onlogout(object sender, EventArgs e)
-        //{
-        //    Application.Current.MainPage = new NavigationPage(new MainPage());
+        }
+        private void Onlogout(object sender, EventArgs e)
+        {
+            Application.Current.MainPage = new NavigationPage(new MainPage());
 
-        //}
+        }
 
-        //private void Onchange(object sender, TextChangedEventArgs e)
-        //{
-        //    listView.ItemsSource = abc.GetCard(e.NewTextValue).Reverse<Ticket>();
-        //}
+        private void Onchange(object sender, TextChangedEventArgs e)
+        {
+            if (!String.IsNullOrWhiteSpace(e.NewTextValue))
+            {
+                var temp = CardDataCollection.Where(c => c.subject.StartsWith(e.NewTextValue));
+                CardDataCollection = new ObservableCollection<Ticket>(temp);
+                listView.ItemsSource = CardDataCollection.Reverse<Ticket>();
+            }
+            else
+            {
+                CardDataCollection = new ObservableCollection<Ticket>(tickets);
+                listView.ItemsSource = CardDataCollection.Reverse<Ticket>();
+            }
+
+        }
 
         private void Onrefresh(object sender, EventArgs e)
         {
@@ -97,12 +108,12 @@ namespace App3
             base.OnAppearing();
             ((NavigationPage)Application.Current.MainPage).BarBackgroundColor = Color.FromHex(app.DefColor);
             //newticket.BackgroundColor = Color.FromHex(app.DefColor);
-            //abc = new CardDataViewModel(); 
             var content = await _client.GetStringAsync(Url);
-            tickets = JsonConvert.DeserializeObject<List<Ticket>>(content);
-            ObservableCollection<Ticket> CardDataCollection = new ObservableCollection<Ticket>(tickets);
+            var temp= JsonConvert.DeserializeObject<List<Ticket>>(content).Where(c => c.customer.username.Equals(Constants.currentcustomer.username));
+            tickets = temp.ToList();
+            CardDataCollection = new ObservableCollection<Ticket>(tickets);
             listView.ItemsSource = CardDataCollection.Reverse<Ticket>();
-            //Icon.Icon = Constants.user.ProfileImage;
+            Icon.Icon = Constants.currentcustomer.profile_picture;
             view.Margin = new Thickness(-200,0,200,0);
             view.TranslateTo(200, 0, 1000, Easing.SpringIn);
             //newticket.Opacity = 0;

@@ -15,7 +15,8 @@ namespace App3.Views
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class MainPage : ContentPage
     {
-        private const string Url = "http://support.prixa.net/api-auth/login/";
+
+        private const string Url = "http://support.prixa.net/api-auth/customers/";
         private HttpClient _client = new HttpClient();
         private bool _canClose = true;
 
@@ -87,26 +88,23 @@ namespace App3.Views
             {
                 var formcontent = new FormUrlEncodedContent(new[]
                 {
-            new KeyValuePair<string,string>("username",enUser.Text),
-            new KeyValuePair<string, string>("password",enPass.Text)
-        });
+                        new KeyValuePair<string,string>("username",enUser.Text),
+                        new KeyValuePair<string, string>("password",enPass.Text)
+                    });
 
 
                 var request = await cl.PostAsync("http://support.prixa.net/api-auth/login/", formcontent);
 
-                try
+                if ((int)request.StatusCode == 200)
                 {
-                    request.EnsureSuccessStatusCode();
-                    DisplayAlert("Login success", "blablabla", "Okay", "Cancel");
+                    var content = await _client.GetStringAsync(Url);
+                    Constants.currentcustomer = JsonConvert.DeserializeObject<List<Customer>>(content).SingleOrDefault(x => x.username == enUser.Text); ;
+                    Application.Current.MainPage = new NavigationPage(new Page1());
                 }
-                catch (HttpRequestException)
+                else
                 {
-                    DisplayAlert("Wrong Password", "Your password was wrong", "OK", "Cancel");
+                    await DisplayAlert("Error", "Your password or username is incorrect", "OK");
                 }
-               
-
-                
-
 
 
                 

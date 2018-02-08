@@ -4,12 +4,12 @@
              x:Class="App3.Profile">
 
     <ContentPage.ToolbarItems>
-
-        <ToolbarItem x:Name="Feeds" Text="Feeds" Order="Secondary" Activated="Onfeed"/>
-        <ToolbarItem x:Name="Tickets" Text="Tickets" Order="Secondary" Activated="Ontickets"/>
         <ToolbarItem x:Name="Settings" Text="Settings" Order="Secondary" Activated="Onactivated"/>
-        <ToolbarItem x:Name="Help" Text="Help" Order="Secondary"/>
-        <ToolbarItem x:Name="Care" Text="Customer Care" Order="Secondary"/>
+        <ToolbarItem x:Name="Tickets" Text="Tickets" Order="Secondary" Activated="Ontickets"/>
+
+        <!--<toolbaritem x:name="feeds" text="feeds" order="secondary" activated="onfeed"/>
+        <toolbaritem x:name="help" text="help" order="secondary"/>
+        <toolbaritem x:name="care" text="customer care" order="secondary"/>-->
         <ToolbarItem x:Name="Logout" Text="Sign Out" Order="Secondary" Activated="Onlogout"/>
 
     </ContentPage.ToolbarItems>
@@ -33,19 +33,21 @@
                     </AbsoluteLayout>
                     <AbsoluteLayout Padding="10,10,10,10" BackgroundColor="White" AbsoluteLayout.LayoutBounds="0,290,1,220" AbsoluteLayout.LayoutFlags="WidthProportional">
                         <Label  Text="Full Name" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,5,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Entry x:Name="lbluser" BackgroundColor="Transparent"  PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata1" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,10,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Label  Text="Organization" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,60,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
-                        <Entry x:Name="lblname" BackgroundColor="Transparent" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata2" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,65,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lblname" BackgroundColor="Transparent"  PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata1" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,10,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Label  Text="Email" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,60,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lblemail" BackgroundColor="Transparent" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata2" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,65,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Label  Text="Address" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,115,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Entry x:Name="lbladdress" BackgroundColor="Transparent" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata3" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,120,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Label  Text="Phone Number" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,170,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
                         <Entry x:Name="lblphn" BackgroundColor="Transparent" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata4" TextColor="#7095d1" AbsoluteLayout.LayoutBounds="0,175,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Label  Text="Company" TextColor="#7095d1"  AbsoluteLayout.LayoutBounds="0,225,1,50" FontSize="10" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
+                        <Entry x:Name="lblcom" BackgroundColor="Transparent" PlaceholderColor="Transparent" Placeholder="Add Name" TextChanged="Userdata5" TextColor="#7095d1" AbsoluteLayout.LayoutBounds="0,230,1,50" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional"/>
 
                     </AbsoluteLayout>
-                    <AbsoluteLayout BackgroundColor="#bcc5d3" AbsoluteLayout.LayoutBounds="0,600,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" >
+                    <AbsoluteLayout BackgroundColor="#bcc5d3" AbsoluteLayout.LayoutBounds="0,660,1,50" AbsoluteLayout.LayoutFlags="WidthProportional" >
 
                     </AbsoluteLayout>
-                    <AbsoluteLayout BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,550,1,200" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
+                    <AbsoluteLayout BackgroundColor="#eaeff7" AbsoluteLayout.LayoutBounds="0,610,1,200" AbsoluteLayout.LayoutFlags="XProportional,WidthProportional" >
 
                     </AbsoluteLayout>
 

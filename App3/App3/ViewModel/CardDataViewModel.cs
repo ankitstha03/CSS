@@ -17,10 +17,10 @@ namespace App3.ViewModel
         private HttpClient _client = new HttpClient();
         List<Ticket> tickets;
 
-        public ObservableCollection<Ticket>  CardDataCollection = new ObservableCollection<Ticket>
-                {
-                 };
-    public object SelectedItem { get; set; }
+        public ObservableCollection<Ticket> CardDataCollection = new ObservableCollection<Ticket>
+        {
+        };
+        public object SelectedItem { get; set; }
 
         public CardDataViewModel()
         {
@@ -35,28 +35,11 @@ namespace App3.ViewModel
                 var content = await _client.GetStringAsync(Url);
                 tickets = JsonConvert.DeserializeObject<List<Ticket>>(content);
                 CardDataCollection = new ObservableCollection<Ticket>(tickets);
-
-
-
-
-            //foreach (Ticket ticket in Constants._ticket)
-            //{
-            //        if (ticket.Currentusr.Username == Constants.user.Username)
-            //        {
-            //            CardDataCollection.Add(ticket);
-            //        }
-            //}
-
-
             }
         }
 
-        //public IEnumerable<Ticket> GetCard(string sear=null)
-        //{
-        //    if(String.IsNullOrWhiteSpace(sear))
-        //        return CardDataCollection;
 
-        //    return CardDataCollection.Where(c => c.subject.StartsWith(sear));
-        //}
+
+                
     }
 }

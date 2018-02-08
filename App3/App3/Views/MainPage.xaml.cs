@@ -83,16 +83,35 @@ namespace App3.Views
 
         private async void Button_Clicked(object sender, EventArgs e)
         {
-            if(enUser.Text!=null && enPass.Text != null && enUser.Text != "" && enPass.Text != "")
+             using (var cl = new HttpClient())
             {
-                Constants.user = new User(enUser.Text,"", new Passwo(enPass.Text));
-                var newuser=JsonConvert.SerializeObject(Constants.user);
-                HttpResponseMessage response = await _client.PostAsync(Url, new StringContent(newuser, Encoding.UTF32, "application/json"));
-                    await DisplayAlert("Login Failed", response.StatusCode.ToString(), "Ok");
+                var formcontent = new FormUrlEncodedContent(new[]
+                {
+            new KeyValuePair<string,string>("username",enUser.Text),
+            new KeyValuePair<string, string>("password",enPass.Text)
+        });
+
+
+                var request = await cl.PostAsync("http://support.prixa.net/api-auth/login/", formcontent);
+
+                try
+                {
+                    request.EnsureSuccessStatusCode();
+                    DisplayAlert("Login success", "blablabla", "Okay", "Cancel");
+                }
+                catch (HttpRequestException)
+                {
+                    DisplayAlert("Wrong Password", "Your password was wrong", "OK", "Cancel");
+                }
+               
+
+                
+
+
+
+                
 
             }
-            else
-                await DisplayAlert("Login Failed", "The Username Or Password is Empty", "Ok");
 
 
         }

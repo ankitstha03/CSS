@@ -99,7 +99,7 @@ namespace App3.Views
                 {
                     var content = await _client.GetStringAsync(Url);
                     Constants.currentcustomer = JsonConvert.DeserializeObject<List<Customer>>(content).SingleOrDefault(x => x.username == enUser.Text); ;
-                    Application.Current.MainPage = new NavigationPage(new Page1());
+                    Application.Current.MainPage = new NavigationPage(new feedPage2());
                 }
                 else
                 {

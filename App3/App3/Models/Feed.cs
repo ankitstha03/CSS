@@ -10,7 +10,7 @@ namespace App3.Models
         public Ticket ticket { get; set; }
         public string created_by { get; set; }
         public string access { get; set; }
-
+        public int id { get; set; }
 
 
         //public Feed() { }
